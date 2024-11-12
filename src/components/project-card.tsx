@@ -6,18 +6,27 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
-
+import Image from "next/image";
 interface Props {
   title: string;
   description: string;
   tags: readonly string[];
   link?: string;
+  logo?: string;
 }
 
-export function ProjectCard({ title, description, tags, link }: Props) {
+export function ProjectCard({ title, description, tags, link, logo }: Props) {
   return (
-    <Card className="flex flex-col overflow-hidden border border-muted p-3">
+    <Card className="flex flex-col overflow-hidden border border-border p-3">
       <CardHeader className="">
+        {logo && (
+          <Image
+            src={`/logo/${logo}.png`}
+            alt={title}
+            width={32}
+            height={32}
+          />
+        )}
         <div className="space-y-1">
           <CardTitle className="text-base">
             {link ? (
@@ -33,10 +42,10 @@ export function ProjectCard({ title, description, tags, link }: Props) {
               title
             )}
           </CardTitle>
-          <div className="hidden font-mono text-xs underline print:visible">
+          <div className="hidden text-xs underline print:block">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <CardDescription className="font-mono text-xs print:text-[10px]">
+          <CardDescription className="text-xs print:text-[10px]">
             {description}
           </CardDescription>
         </div>
