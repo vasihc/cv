@@ -101,12 +101,12 @@ export const RESUME_DATA = {
       company: "AstraOne",
       link: "https://astraone.com",
       badges: ["Hybrid"],
-      title: "Senior Product Engineer -> Head of Research And Development",
+      title: "Middle Product Engineer -> Head of Research And Development",
       logo: "astraone",
-      start: "2020",
+      start: "2019",
       end: "2022",
       description:
-        "Led R&D team of 15 creating AI-driven advertising products generating $300k+ MRR. Built design system, SSP and DSP products.",
+        "Developed adtech platform for data aggregation and targeting. Led R&D team of 15 creating AI-driven advertising products generating $300k+ MRR. Built design system, SSP and DSP products.",
     },
     {
       company: "Makesense",
@@ -114,24 +114,13 @@ export const RESUME_DATA = {
       badges: ["Remote"],
       title: "Founding Design Engineer & Co-Founder",
       logo: "makesense",
-      start: "2021",
-      end: "2021",
-      description:
-        "Co-founded knowledge management tool using Zettelkasten and Mind Palace techniques. Conducted 50+ customer interviews, developed MVP, and led product development.",
-    },
-    {
-      company: "Hybrid Europe",
-      link: "https://hybrideurope.com",
-      badges: ["Hybrid"],
-      title: "Product Designer & Engineer",
-      logo: "hybrid",
-      start: "2019",
+      start: "2020",
       end: "2020",
       description:
-        "Developed adtech platform for data aggregation and targeting. Created CJM, JTBD, and MVP designs. Built frontend for SaaS platform launch.",
+        "Co-founded knowledge management tool using Zettelkasten and Mind Palace techniques.",
     },
     {
-      company: "PRUE, Solarskills, Plarin, etc.",
+      company: "Solarskills, Plarin, etc.",
       link: null,
       badges: [],
       title: "Product Designer & Frontend Developer",
