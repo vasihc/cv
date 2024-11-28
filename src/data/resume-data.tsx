@@ -52,7 +52,7 @@ export const RESUME_DATA = {
       start: "2023",
       end: "2024",
       description:
-        "Developed cross-platform note-taking applications for web, iOS, and Android using React Native. Built an AI assistant with GPT integration for Telegram bots and a scalable backend architecture using Node.js and Firestore.",
+      "Led the development of a cross-platform mobile application using React Native for iOS, Android, and Amazon platforms, achieving over 10 million downloads. Integrated Unity into the React Native application for advanced interactive features. Designed and implemented a reusable template to streamline the creation of new applications. Configured CI/CD pipelines to automate builds and deployments, reducing time-to-market.",
     },
     {
       company: "Hints",
