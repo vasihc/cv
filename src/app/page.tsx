@@ -118,7 +118,7 @@ export default function Page() {
         </div>
         <Section>
           <h2 className="text-xl font-semibold">About</h2>
-          <p className="  text-sm text-muted-foreground print:text-[12px]">
+          <p className="text-sm text-muted-foreground print:text-[12px]">
             {RESUME_DATA.summary}
           </p>
         </Section>
@@ -243,10 +243,6 @@ export default function Page() {
 
       <CommandMenu
         links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
           ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
             url: socialMediaLink.url,
             title: socialMediaLink.name,
