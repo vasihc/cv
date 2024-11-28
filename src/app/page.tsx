@@ -149,6 +149,7 @@ export default function Page() {
                           <h3 className="inline-flex items-center justify-center gap-x-2 font-semibold leading-none">
                             <a
                               className="hover:underline"
+                              target="_blank"
                               href={work.link ?? "#"}
                             >
                               {work.company}
