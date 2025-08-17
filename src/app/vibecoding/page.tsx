@@ -2,8 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   HeroSlide,
@@ -15,8 +14,7 @@ import {
   VersionControlSlide,
   TestsSlide,
   BugFixSlide,
-  DocumentationSlide,
-  FunctionalitySlide,
+  ComplexFeaturesSlide,
   ChooseStackSlide,
   KeepExperimentingSlide,
   AdvancedSlide,
@@ -62,11 +60,11 @@ const slides = [
   },
   {
     id: 10,
-    content: <DocumentationSlide />,
+    content: <ComplexFeaturesSlide />,
   },
   {
     id: 11,
-    content: <FunctionalitySlide />,
+    content: <ComplexFeaturesSlide />,
   },
   {
     id: 12,
