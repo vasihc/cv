@@ -19,6 +19,8 @@ export function ApproachSlide() {
       rulesFile1Desc: "- правила проекта",
       rulesFile2: ".cursor/rules/project-rules.md",
       rulesFile2Desc: "- Rules: [Rules](./docs/rules-checklist.md)",
+      rulesResourcesTitle: "Полезные ресурсы:",
+      rulesResourcesDesc: "Найдите готовые правила для вашего стека:",
       wisprTitle: "Wispr Flow",
       wisprUrl: "wisprflow.ai →",
       voiceTitle: "Голос в текст",
@@ -44,6 +46,8 @@ export function ApproachSlide() {
       rulesFile1Desc: "- project rules",
       rulesFile2: ".cursor/rules/project-rules.md",
       rulesFile2Desc: "- Rules: [Rules](./docs/rules-checklist.md)",
+      rulesResourcesTitle: "Useful Resources:",
+      rulesResourcesDesc: "Find curated rules for your stack:",
       wisprTitle: "Wispr Flow",
       wisprUrl: "wisprflow.ai →",
       voiceTitle: "Voice to Text",
@@ -150,6 +154,36 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
                   <div className="h-2 w-2 rounded-full bg-green-500"></div>
                   <span className="font-mono">{t.rulesFile2}</span>
                   <span>{t.rulesFile2Desc}</span>
+                </div>
+              </div>
+              
+              {/* Resources Section */}
+              <div className="mt-4 pt-3 border-t border-green-200 dark:border-green-700">
+                <p className="mb-2 text-sm font-medium text-green-800 dark:text-green-300">
+                  {t.rulesResourcesTitle}
+                </p>
+                <p className="mb-3 text-xs text-gray-600 dark:text-gray-400">
+                  {t.rulesResourcesDesc}
+                </p>
+                <div className="space-y-2">
+                  <a
+                    href="https://dotcursorrules.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    <div className="h-1.5 w-1.5 rounded-full bg-blue-500"></div>
+                    <span>dotcursorrules.com</span>
+                  </a>
+                  <a
+                    href="https://github.com/PatrickJS/awesome-cursorrules"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    <div className="h-1.5 w-1.5 rounded-full bg-blue-500"></div>
+                    <span>awesome-cursorrules (GitHub)</span>
+                  </a>
                 </div>
               </div>
             </CardContent>

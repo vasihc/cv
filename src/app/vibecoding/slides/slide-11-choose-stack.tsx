@@ -31,6 +31,8 @@ export function ChooseStackSlide() {
       nodejs: "• Node.js + TypeScript → стандартный выбор для серверного JS",
       python: "• Python, PHP, Ruby → проверенные экосистемы",
       swift: "• Swift → для iOS приложений даже новичку доступно с помощью AI",
+      reactNative:
+        "• React Native → кроссплатформенная мобильная разработка с помощью AI",
       resourceTitle: "🔗 Ресурс",
       resourceDesc: "Собранные инструменты для вайбкодинга:",
       resourceUrl: "👉 https://vibecoding.tools",
@@ -40,6 +42,7 @@ export function ChooseStackSlide() {
       nodejsLabel: "Node.js",
       pythonLabel: "Python",
       swiftLabel: "Swift",
+      reactNativeLabel: "React Native",
       tailwindLabel: "Tailwind",
       quote: "«Чем популярнее стек — тем лучше работает AI»",
     },
@@ -57,6 +60,8 @@ export function ChooseStackSlide() {
       nodejs: "• Node.js + TypeScript → standard choice for server-side JS",
       python: "• Python, PHP, Ruby → proven ecosystems",
       swift: "• Swift → for iOS apps even accessible to beginners with AI help",
+      reactNative:
+        "• React Native → cross-platform mobile development with AI assistance",
       resourceTitle: "🔗 Resource",
       resourceDesc: "Collected tools for vibe coding:",
       resourceUrl: "👉 https://vibecoding.tools",
@@ -66,6 +71,7 @@ export function ChooseStackSlide() {
       nodejsLabel: "Node.js",
       pythonLabel: "Python",
       swiftLabel: "Swift",
+      reactNativeLabel: "React Native",
       tailwindLabel: "Tailwind",
       quote: "'The more popular the stack — the better AI works'",
     },
@@ -129,6 +135,9 @@ export function ChooseStackSlide() {
                 </li>
                 <li>
                   • <Smartphone className="inline h-3 w-3" /> {t.swift}
+                </li>
+                <li>
+                  • <Smartphone className="inline h-3 w-3" /> {t.reactNative}
                 </li>
               </ul>
             </CardContent>
@@ -202,16 +211,6 @@ export function ChooseStackSlide() {
                   </span>
                 </div>
 
-                {/* Python */}
-                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-                    <Code className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
-                    {t.pythonLabel}
-                  </span>
-                </div>
-
                 {/* Swift */}
                 <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
@@ -219,6 +218,16 @@ export function ChooseStackSlide() {
                   </div>
                   <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                     {t.swiftLabel}
+                  </span>
+                </div>
+
+                {/* React Native */}
+                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+                    <Smartphone className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                    {t.reactNativeLabel}
                   </span>
                 </div>
 
