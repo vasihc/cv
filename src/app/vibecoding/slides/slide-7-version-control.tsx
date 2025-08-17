@@ -5,7 +5,9 @@ import { GitBranch, RotateCcw, CheckCircle } from "lucide-react";
 export function VersionControlSlide() {
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">Version Control</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold">
+        📝 Version Control
+      </h2>
 
       {/* Main principle */}
       <div className="rounded-lg border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-6">

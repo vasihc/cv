@@ -37,7 +37,7 @@ export function HeroSlide() {
           {/* Title and subtitle */}
           <div className="space-y-3">
             <h1 className="text-4xl font-bold text-gray-900">
-              R-Founders Mobile Apps
+              🚀 R-Founders Mobile Apps
             </h1>
             <p className="text-xl text-gray-600">Ускорение разработки с AI</p>
           </div>

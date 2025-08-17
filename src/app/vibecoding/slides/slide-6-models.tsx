@@ -6,7 +6,7 @@ export function ModelsSlide() {
   return (
     <div className="space-y-8">
       <h2 className="mb-6 text-center text-4xl font-bold">
-        Модель имеет значение
+        🤖 Модель имеет значение
       </h2>
 
       {/* Main content with image */}

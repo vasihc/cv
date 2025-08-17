@@ -15,7 +15,7 @@ export function MCPSlide() {
   return (
     <div className="space-y-8">
       <h2 className="mb-6 text-center text-4xl font-bold">
-        MCP - Расширение возможностей
+        🔌 MCP - Расширение возможностей
       </h2>
 
       {/* MCP Introduction */}
@@ -53,7 +53,7 @@ export function MCPSlide() {
             </div>
           </CardHeader>
           <CardContent>
-            <p className="mb-3 text-sm text-gray-700">
+            <p className="mb-3 mt-4 text-sm text-gray-700">
               Cursor получает доступ к Figma - можно выделить компонент и
               попросить его реализовать.
             </p>
@@ -77,7 +77,7 @@ export function MCPSlide() {
             </div>
           </CardHeader>
           <CardContent>
-            <p className="mb-3 text-sm text-gray-700">
+            <p className="mb-3 mt-4 text-sm text-gray-700">
               MCP для правильной документации, чтобы LLM не придумывала
               несуществующие методы.
             </p>
@@ -101,7 +101,7 @@ export function MCPSlide() {
             </div>
           </CardHeader>
           <CardContent>
-            <p className="mb-3 text-sm text-gray-700">
+            <p className="mb-3 mt-4 text-sm text-gray-700">
               Анализирует код на уязвимости и security проблемы.
             </p>
             <a
@@ -124,7 +124,7 @@ export function MCPSlide() {
             </div>
           </CardHeader>
           <CardContent>
-            <p className="mb-3 text-sm text-gray-700">
+            <p className="mb-3 mt-4 text-sm text-gray-700">
               Cursor теперь может видеть результат в браузере и
               взаимодействовать с веб-страницами.
             </p>
@@ -148,7 +148,7 @@ export function MCPSlide() {
             </div>
           </CardHeader>
           <CardContent>
-            <p className="mb-3 text-sm text-gray-700">
+            <p className="mb-3 mt-4 text-sm text-gray-700">
               Cursor создает ветки, PR, триггерит проверки и мержит без
               переключений.
             </p>
@@ -172,7 +172,7 @@ export function MCPSlide() {
             </div>
           </CardHeader>
           <CardContent>
-            <p className="mb-3 text-sm text-gray-700">
+            <p className="mb-3 mt-4 text-sm text-gray-700">
               Доступ к схеме базы данных для лучшего понимания архитектуры.
             </p>
             <a

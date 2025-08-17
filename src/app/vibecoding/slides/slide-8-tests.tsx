@@ -12,7 +12,7 @@ import {
 export function TestsSlide() {
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">Тесты</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold">🧪 Тесты</h2>
 
       {/* Main content with image */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">

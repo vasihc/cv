@@ -4,36 +4,15 @@ export function AdvancedSlide() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h2 className="mb-2 text-4xl font-bold">Claude Code на максималках</h2>
+        <h2 className="mb-2 text-4xl font-bold">
+          ⚡ Claude Code на максималках
+        </h2>
       </div>
 
       {/* Two-column layout */}
       <div className="flex items-start gap-7">
         {/* Left column - 60% */}
         <div className="flex-1 space-y-4">
-          {/* Why switch from Cursor */}
-          <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-violet-50">
-            <CardContent className="p-4">
-              <h4 className="mb-2 font-bold text-purple-800">
-                🔄 Почему перешли с Cursor
-              </h4>
-              <ul className="space-y-1 text-sm text-gray-700">
-                <li>• Работает в терминале, не как редактор с AI</li>
-                <li>• Решает сложные задачи лучше Cursor на любых моделях</li>
-                <li>
-                  • iOS drag-and-drop анимации → Cursor не справился, Claude за
-                  30 мин
-                </li>
-                <li>
-                  • Google Calendar интеграция → Cursor ломался, Claude за час
-                </li>
-                <li>
-                  • iOS→Android портирование → Cursor буксовал, Claude быстро
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
           {/* Key techniques */}
           <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
             <CardContent className="p-4">
@@ -117,14 +96,6 @@ export function AdvancedSlide() {
               alt="Claude Code Terminal Interface"
               className="h-auto w-full rounded-lg shadow-lg"
             />
-            <div className="mt-4 rounded-lg border border-indigo-200 bg-gradient-to-r from-indigo-50 to-purple-50 p-4">
-              <h3 className="mb-2 text-xl font-bold text-indigo-800">
-                Max ≈ $200/мес → почти безлимит
-              </h3>
-              <p className="text-sm text-gray-700">
-                Окупается при продукте/экономии часов.
-              </p>
-            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ export function AIRevolutionSlide() {
     <div className="space-y-8">
       {/* Main headers */}
       <div className="space-y-2 text-center">
-        <h2 className="text-3xl font-bold text-gray-900">Вайб-кодинг</h2>
+        <h2 className="text-3xl font-bold text-gray-900">🎯 Вайб-кодинг</h2>
         <h3 className="text-xl text-gray-600">Зачем?</h3>
       </div>
 

@@ -49,7 +49,7 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
   return (
     <div className="space-y-8">
       <h2 className="mb-6 text-center text-4xl font-bold">
-        Инструменты разработки
+        🛠️ Инструменты разработки
       </h2>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
