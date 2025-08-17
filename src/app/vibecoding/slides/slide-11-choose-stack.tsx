@@ -10,13 +10,72 @@ import {
   Smartphone,
   Palette,
 } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function ChooseStackSlide() {
+  const { language } = useLanguage();
+
+  const content = {
+    ru: {
+      title: "🛠️ Выбор правильного стека",
+      mainIdeaTitle: "🎯 Основная идея",
+      mainIdeaDesc:
+        "Чем популярнее и стандартизированнее стек, тем проще с ним работает LLM.",
+      practiceTitle: "🔑 Практика и советы",
+      supabase:
+        "• Supabase / Firebase → быстрый старт (auth, storage, realtime)",
+      postgres:
+        "• Postgres / MongoDB → надёжные базы данных, легко поддерживаются AI",
+      tailwind:
+        "• TailwindCSS + shadcn/ui → быстрые интерфейсы, LLM хорошо пишет стили",
+      nodejs: "• Node.js + TypeScript → стандартный выбор для серверного JS",
+      python: "• Python, PHP, Ruby → проверенные экосистемы",
+      swift: "• Swift → для iOS приложений даже новичку доступно с помощью AI",
+      resourceTitle: "🔗 Ресурс",
+      resourceDesc: "Собранные инструменты для вайбкодинга:",
+      resourceUrl: "👉 https://vibecoding.tools",
+      popularTechTitle: "Популярные технологии",
+      postgresLabel: "Postgres",
+      firebaseLabel: "Firebase",
+      nodejsLabel: "Node.js",
+      pythonLabel: "Python",
+      swiftLabel: "Swift",
+      tailwindLabel: "Tailwind",
+      quote: "«Чем популярнее стек — тем лучше работает AI»",
+    },
+    en: {
+      title: "🛠️ Choosing the Right Stack",
+      mainIdeaTitle: "🎯 Main Idea",
+      mainIdeaDesc:
+        "The more popular and standardized the stack, the easier it is for LLM to work with it.",
+      practiceTitle: "🔑 Practice and Tips",
+      supabase: "• Supabase / Firebase → quick start (auth, storage, realtime)",
+      postgres:
+        "• Postgres / MongoDB → reliable databases, easily maintained by AI",
+      tailwind:
+        "• TailwindCSS + shadcn/ui → fast interfaces, LLM writes styles well",
+      nodejs: "• Node.js + TypeScript → standard choice for server-side JS",
+      python: "• Python, PHP, Ruby → proven ecosystems",
+      swift: "• Swift → for iOS apps even accessible to beginners with AI help",
+      resourceTitle: "🔗 Resource",
+      resourceDesc: "Collected tools for vibe coding:",
+      resourceUrl: "👉 https://vibecoding.tools",
+      popularTechTitle: "Popular Technologies",
+      postgresLabel: "Postgres",
+      firebaseLabel: "Firebase",
+      nodejsLabel: "Node.js",
+      pythonLabel: "Python",
+      swiftLabel: "Swift",
+      tailwindLabel: "Tailwind",
+      quote: "'The more popular the stack — the better AI works'",
+    },
+  };
+
+  const t = content[language];
+
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">
-        🛠️ Выбор правильного стека
-      </h2>
+      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
 
       {/* Main content with illustration */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -29,12 +88,9 @@ export function ChooseStackSlide() {
                 <div className="rounded-full bg-green-600 p-2">
                   <Target className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-green-800">🎯 Основная идея</h4>
+                <h4 className="font-bold text-green-800">{t.mainIdeaTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                Чем популярнее и стандартизированнее стек, тем проще с ним
-                работает LLM.
-              </p>
+              <p className="text-sm text-gray-700">{t.mainIdeaDesc}</p>
             </CardContent>
           </Card>
 
@@ -45,34 +101,26 @@ export function ChooseStackSlide() {
                 <div className="rounded-full bg-blue-600 p-2">
                   <Lightbulb className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-blue-800">
-                  🔑 Практика и советы
-                </h4>
+                <h4 className="font-bold text-blue-800">{t.practiceTitle}</h4>
               </div>
               <ul className="space-y-1 text-sm text-gray-700">
                 <li>
-                  • <Database className="inline h-3 w-3" /> Supabase / Firebase
-                  → быстрый старт (auth, storage, realtime)
+                  • <Database className="inline h-3 w-3" /> {t.supabase}
                 </li>
                 <li>
-                  • <Database className="inline h-3 w-3" /> Postgres / MongoDB →
-                  надёжные базы данных, легко поддерживаются AI
+                  • <Database className="inline h-3 w-3" /> {t.postgres}
                 </li>
                 <li>
-                  • <Palette className="inline h-3 w-3" /> TailwindCSS +
-                  shadcn/ui → быстрые интерфейсы, LLM хорошо пишет стили
+                  • <Palette className="inline h-3 w-3" /> {t.tailwind}
                 </li>
                 <li>
-                  • <Code className="inline h-3 w-3" /> Node.js + TypeScript →
-                  стандартный выбор для серверного JS
+                  • <Code className="inline h-3 w-3" /> {t.nodejs}
                 </li>
                 <li>
-                  • <Code className="inline h-3 w-3" /> Python, PHP, Ruby →
-                  проверенные экосистемы
+                  • <Code className="inline h-3 w-3" /> {t.python}
                 </li>
                 <li>
-                  • <Smartphone className="inline h-3 w-3" /> Swift → для iOS
-                  приложений даже новичку доступно с помощью AI
+                  • <Smartphone className="inline h-3 w-3" /> {t.swift}
                 </li>
               </ul>
             </CardContent>
@@ -85,18 +133,16 @@ export function ChooseStackSlide() {
                 <div className="rounded-full bg-orange-600 p-2">
                   <ExternalLink className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-orange-800">🔗 Ресурс</h4>
+                <h4 className="font-bold text-orange-800">{t.resourceTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                Собранные инструменты для вайбкодинга:
-              </p>
+              <p className="text-sm text-gray-700">{t.resourceDesc}</p>
               <a
                 href="https://vibecoding.tools"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-orange-600 hover:text-orange-700"
               >
-                👉 https://vibecoding.tools
+                {t.resourceUrl}
                 <ExternalLink className="h-3 w-3" />
               </a>
             </CardContent>
@@ -109,7 +155,7 @@ export function ChooseStackSlide() {
             {/* Tech logos grid */}
             <div className="mb-6 text-center">
               <h3 className="mb-4 text-lg font-bold text-gray-800">
-                Популярные технологии
+                {t.popularTechTitle}
               </h3>
 
               {/* Logo grid */}
@@ -120,7 +166,7 @@ export function ChooseStackSlide() {
                     <Database className="h-6 w-6 text-blue-600" />
                   </div>
                   <span className="text-xs font-medium text-gray-700">
-                    Postgres
+                    {t.postgresLabel}
                   </span>
                 </div>
 
@@ -130,7 +176,7 @@ export function ChooseStackSlide() {
                     <Database className="h-6 w-6 text-orange-600" />
                   </div>
                   <span className="text-xs font-medium text-gray-700">
-                    Firebase
+                    {t.firebaseLabel}
                   </span>
                 </div>
 
@@ -140,7 +186,7 @@ export function ChooseStackSlide() {
                     <Code className="h-6 w-6 text-green-600" />
                   </div>
                   <span className="text-xs font-medium text-gray-700">
-                    Node.js
+                    {t.nodejsLabel}
                   </span>
                 </div>
 
@@ -150,7 +196,7 @@ export function ChooseStackSlide() {
                     <Code className="h-6 w-6 text-blue-600" />
                   </div>
                   <span className="text-xs font-medium text-gray-700">
-                    Python
+                    {t.pythonLabel}
                   </span>
                 </div>
 
@@ -160,7 +206,7 @@ export function ChooseStackSlide() {
                     <Smartphone className="h-6 w-6 text-orange-600" />
                   </div>
                   <span className="text-xs font-medium text-gray-700">
-                    Swift
+                    {t.swiftLabel}
                   </span>
                 </div>
 
@@ -170,7 +216,7 @@ export function ChooseStackSlide() {
                     <Palette className="h-6 w-6 text-cyan-600" />
                   </div>
                   <span className="text-xs font-medium text-gray-700">
-                    Tailwind
+                    {t.tailwindLabel}
                   </span>
                 </div>
               </div>
@@ -179,9 +225,7 @@ export function ChooseStackSlide() {
             {/* Quote */}
             <div className="rounded-lg bg-white p-4 shadow-sm">
               <div className="text-center">
-                <p className="text-sm font-medium text-gray-800">
-                  &ldquo;Чем популярнее стек — тем лучше работает AI&rdquo;
-                </p>
+                <p className="text-sm font-medium text-gray-800">{t.quote}</p>
                 <div className="mt-2 flex justify-center">
                   <div className="flex gap-1">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>

@@ -1,6 +1,26 @@
 import { Code } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function HeroSlide() {
+  const { language } = useLanguage();
+
+  const content = {
+    ru: {
+      title: "🚀 R-Founders Mobile Apps",
+      subtitle: "Ускорение разработки с AI",
+      speaker: "Глебов Василий",
+      date: "Август 2025",
+    },
+    en: {
+      title: "🚀 R-Founders Mobile Apps",
+      subtitle: "Accelerating Development with AI",
+      speaker: "Vasilii Glebov",
+      date: "August 2025",
+    },
+  };
+
+  const t = content[language];
+
   return (
     <div className="space-y-8">
       {/* Terminal-style header */}
@@ -36,18 +56,16 @@ export function HeroSlide() {
 
           {/* Title and subtitle */}
           <div className="space-y-3">
-            <h1 className="text-4xl font-bold text-gray-900">
-              🚀 R-Founders Mobile Apps
-            </h1>
-            <p className="text-xl text-gray-600">Ускорение разработки с AI</p>
+            <h1 className="text-4xl font-bold text-gray-900">{t.title}</h1>
+            <p className="text-xl text-gray-600">{t.subtitle}</p>
           </div>
 
           {/* Speaker info */}
           <div className="space-y-2">
             <div className="text-lg text-gray-700">
-              <span className="font-semibold">Глебов Василий</span>
+              <span className="font-semibold">{t.speaker}</span>
             </div>
-            <div className="text-sm text-gray-500">Август 2025</div>
+            <div className="text-sm text-gray-500">{t.date}</div>
           </div>
 
           {/* Closing brace */}

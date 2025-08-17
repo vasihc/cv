@@ -13,11 +13,87 @@ import {
   Wrench,
   Package,
 } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function BugFixSlide() {
+  const { language } = useLanguage();
+
+  const content = {
+    ru: {
+      title: "🐞 Bug Fixes",
+      mainIdeaTitle: "🎯 Основная идея",
+      mainIdeaDesc:
+        "Первый шаг при баге — скопировать сообщение об ошибке и вставить его в LLM. Часто этого достаточно, чтобы AI сам нашёл и исправил проблему.",
+      problemTitle: "⚠️ Проблема",
+      problemDesc:
+        "LLM при повторных фиксах может «наращивать слои мусорного кода» и усложнять проект.",
+      practiceTitle: "🔑 Практика и советы",
+      practicePoint1: "• Копипаст ошибки → AI сам понимает причину",
+      practicePoint2: "• Reset перед каждой новой попыткой (git reset)",
+      practicePoint3: "• Многоуровневое мышление: сначала причины, потом код",
+      practicePoint4: "• Логирование помогает точнее диагностировать",
+      practicePoint5: "• Смена модели (Claude, OpenAI, Gemini)",
+      practicePoint6: "• Точный фикс на чистой базе",
+      practicePoint7:
+        "• «Всегда уточняй версию библиотеки при багах», т.к. фикс для v3 ≠ фикс для v4",
+      bugBotTitle: "🤖 Bug Bot (Cursor)",
+      bugBotDesc:
+        "Bug Bot от Cursor запускается при создании pull request и делает review. Иногда находит действительно важные баги, но иногда докапывается до мелочей. В целом полезно.",
+      terminalTitle: "Terminal - npm start",
+      errorMessage: "Error: Cannot read property 'x' of undefined",
+      errorLocation1: " at processData (app.js:15:23)",
+      errorLocation2: " at handleSubmit (app.js:8:12)",
+      errorLocation3: " at HTMLFormElement.onsubmit",
+      bugBotLabel: "Bug Bot",
+      fixComment: "// Fix: Add null check before accessing property",
+      functionStart: "function processData(data) {",
+      nullCheck: " if (!data || !data.x) {",
+      returnNull: " return null;",
+      closingBrace1: " }",
+      returnData: " return data.x;",
+      closingBrace2: "}",
+    },
+    en: {
+      title: "🐞 Bug Fixes",
+      mainIdeaTitle: "🎯 Main Idea",
+      mainIdeaDesc:
+        "The first step when encountering a bug is to copy the error message and paste it into the LLM. Often this is enough for AI to find and fix the problem itself.",
+      problemTitle: "⚠️ Problem",
+      problemDesc:
+        "LLM during repeated fixes can 'accumulate layers of garbage code' and complicate the project.",
+      practiceTitle: "🔑 Practice and Tips",
+      practicePoint1: "• Copy-paste error → AI understands the cause itself",
+      practicePoint2: "• Reset before each new attempt (git reset)",
+      practicePoint3: "• Multi-level thinking: first causes, then code",
+      practicePoint4: "• Logging helps diagnose more accurately",
+      practicePoint5: "• Switch models (Claude, OpenAI, Gemini)",
+      practicePoint6: "• Precise fix on clean base",
+      practicePoint7:
+        "• 'Always specify library version for bugs', because fix for v3 ≠ fix for v4",
+      bugBotTitle: "🤖 Bug Bot (Cursor)",
+      bugBotDesc:
+        "Bug Bot from Cursor runs when creating a pull request and does review. Sometimes finds really important bugs, but sometimes digs into details. Generally useful.",
+      terminalTitle: "Terminal - npm start",
+      errorMessage: "Error: Cannot read property 'x' of undefined",
+      errorLocation1: " at processData (app.js:15:23)",
+      errorLocation2: " at handleSubmit (app.js:8:12)",
+      errorLocation3: " at HTMLFormElement.onsubmit",
+      bugBotLabel: "Bug Bot",
+      fixComment: "// Fix: Add null check before accessing property",
+      functionStart: "function processData(data) {",
+      nullCheck: " if (!data || !data.x) {",
+      returnNull: " return null;",
+      closingBrace1: " }",
+      returnData: " return data.x;",
+      closingBrace2: "}",
+    },
+  };
+
+  const t = content[language];
+
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">🐞 Bug Fixes</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
 
       {/* Main content with code block */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -30,13 +106,9 @@ export function BugFixSlide() {
                 <div className="rounded-full bg-green-600 p-2">
                   <Target className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-green-800">🎯 Основная идея</h4>
+                <h4 className="font-bold text-green-800">{t.mainIdeaTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                Первый шаг при баге — скопировать сообщение об ошибке и вставить
-                его в LLM. Часто этого достаточно, чтобы AI сам нашёл и исправил
-                проблему.
-              </p>
+              <p className="text-sm text-gray-700">{t.mainIdeaDesc}</p>
             </CardContent>
           </Card>
 
@@ -47,12 +119,9 @@ export function BugFixSlide() {
                 <div className="rounded-full bg-red-600 p-2">
                   <AlertTriangle className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-red-800">⚠️ Проблема</h4>
+                <h4 className="font-bold text-red-800">{t.problemTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                LLM при повторных фиксах может «наращивать слои мусорного кода»
-                и усложнять проект.
-              </p>
+              <p className="text-sm text-gray-700">{t.problemDesc}</p>
             </CardContent>
           </Card>
 
@@ -63,38 +132,29 @@ export function BugFixSlide() {
                 <div className="rounded-full bg-blue-600 p-2">
                   <Lightbulb className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-blue-800">
-                  🔑 Практика и советы
-                </h4>
+                <h4 className="font-bold text-blue-800">{t.practiceTitle}</h4>
               </div>
               <ul className="space-y-1 text-sm text-gray-700">
                 <li>
-                  • <Copy className="inline h-3 w-3" /> Копипаст ошибки → AI сам
-                  понимает причину
+                  • <Copy className="inline h-3 w-3" /> {t.practicePoint1}
                 </li>
                 <li>
-                  • <RotateCcw className="inline h-3 w-3" /> Reset перед каждой
-                  новой попыткой (git reset)
+                  • <RotateCcw className="inline h-3 w-3" /> {t.practicePoint2}
                 </li>
                 <li>
-                  • <Layers className="inline h-3 w-3" /> Многоуровневое
-                  мышление: сначала причины, потом код
+                  • <Layers className="inline h-3 w-3" /> {t.practicePoint3}
                 </li>
                 <li>
-                  • <FileText className="inline h-3 w-3" /> Логирование помогает
-                  точнее диагностировать
+                  • <FileText className="inline h-3 w-3" /> {t.practicePoint4}
                 </li>
                 <li>
-                  • <Zap className="inline h-3 w-3" /> Смена модели (Claude,
-                  OpenAI, Gemini)
+                  • <Zap className="inline h-3 w-3" /> {t.practicePoint5}
                 </li>
                 <li>
-                  • <Wrench className="inline h-3 w-3" /> Точный фикс на чистой
-                  базе
+                  • <Wrench className="inline h-3 w-3" /> {t.practicePoint6}
                 </li>
                 <li>
-                  • <Package className="inline h-3 w-3" /> «Всегда уточняй
-                  версию библиотеки при багах», т.к. фикс для v3 ≠ фикс для v4
+                  • <Package className="inline h-3 w-3" /> {t.practicePoint7}
                 </li>
               </ul>
             </CardContent>
@@ -107,15 +167,9 @@ export function BugFixSlide() {
                 <div className="rounded-full bg-purple-600 p-2">
                   <Bot className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-purple-800">
-                  🤖 Bug Bot (Cursor)
-                </h4>
+                <h4 className="font-bold text-purple-800">{t.bugBotTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                <strong>Bug Bot</strong> от Cursor запускается при создании pull
-                request и делает review. Иногда находит действительно важные
-                баги, но иногда докапывается до мелочей. В целом полезно.
-              </p>
+              <p className="text-sm text-gray-700">{t.bugBotDesc}</p>
             </CardContent>
           </Card>
         </div>
@@ -130,27 +184,16 @@ export function BugFixSlide() {
                 <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
                 <div className="h-3 w-3 rounded-full bg-green-500"></div>
               </div>
-              <span className="text-gray-400">Terminal - npm start</span>
+              <span className="text-gray-400">{t.terminalTitle}</span>
             </div>
 
             {/* Error message */}
             <div className="space-y-2">
               <div className="text-red-400">
-                <div>
-                  Error: Cannot read property &apos;x&apos; of undefined
-                </div>
-                <div className="text-gray-500">
-                  {" "}
-                  at processData (app.js:15:23)
-                </div>
-                <div className="text-gray-500">
-                  {" "}
-                  at handleSubmit (app.js:8:12)
-                </div>
-                <div className="text-gray-500">
-                  {" "}
-                  at HTMLFormElement.onsubmit
-                </div>
+                <div>{t.errorMessage}</div>
+                <div className="text-gray-500">{t.errorLocation1}</div>
+                <div className="text-gray-500">{t.errorLocation2}</div>
+                <div className="text-gray-500">{t.errorLocation3}</div>
               </div>
 
               <div className="text-gray-300">...</div>
@@ -159,23 +202,18 @@ export function BugFixSlide() {
               <div className="rounded border border-green-600 bg-green-900/20 p-3">
                 <div className="mb-2 flex items-center gap-2">
                   <span className="text-lg">🤖</span>
-                  <span className="font-semibold text-green-400">Bug Bot</span>
+                  <span className="font-semibold text-green-400">
+                    {t.bugBotLabel}
+                  </span>
                 </div>
                 <div className="text-xs text-green-300">
-                  <div>
-                    {"// Fix: Add null check before accessing property"}
-                  </div>
-                  <div className="text-gray-400">
-                    function processData(data) {"{"}
-                  </div>
-                  <div className="text-gray-400">
-                    {" "}
-                    if (!data || !data.x) {"{"}
-                  </div>
-                  <div className="text-green-400"> return null;</div>
-                  <div className="text-gray-400"> {"}"}</div>
-                  <div className="text-gray-400"> return data.x;</div>
-                  <div className="text-gray-400">{"}"}</div>
+                  <div>{t.fixComment}</div>
+                  <div className="text-gray-400">{t.functionStart}</div>
+                  <div className="text-gray-400">{t.nullCheck}</div>
+                  <div className="text-green-400"> {t.returnNull}</div>
+                  <div className="text-gray-400"> {t.closingBrace1}</div>
+                  <div className="text-gray-400"> {t.returnData}</div>
+                  <div className="text-gray-400">{t.closingBrace2}</div>
                 </div>
               </div>
             </div>

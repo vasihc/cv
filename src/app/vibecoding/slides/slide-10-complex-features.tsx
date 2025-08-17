@@ -8,11 +8,84 @@ import {
   FolderOpen,
   Code,
 } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function ComplexFeaturesSlide() {
+  const { language } = useLanguage();
+
+  const content = {
+    ru: {
+      title: "⚙️ Сложные фичи",
+      mainIdeaTitle: "🎯 Основная идея",
+      mainIdeaDesc:
+        "Если фича сложная, не стоит сразу доверять её реализацию LLM внутри большого проекта. Лучше сначала собрать её как отдельный маленький проект/песочницу, а потом интегрировать.",
+      practiceTitle: "🔑 Практика и советы",
+      cleanEnvTitle: "1. Чистая среда",
+      cleanEnvPoint1:
+        "• Новую сложную фичу лучше реализовать в отдельном репо или папке.",
+      cleanEnvPoint2: "• Так проще отладить без помех от старого кода.",
+      referenceTitle: "2. Референс-имплементация",
+      referencePoint1:
+        "• Можно найти готовый пример на GitHub и попросить LLM повторить подход.",
+      referencePoint2:
+        "• Или сделать минимальный прототип самому, а затем адаптировать.",
+      modularityTitle: "3. Модульность",
+      modularityPoint1:
+        "• Разделяй проект на маленькие файлы и сервисы с чётким API.",
+      modularityPoint2:
+        "• LLM легче работает, если есть ясные границы и стабильный внешний интерфейс.",
+      apiFirstTitle: "4. API-first подход",
+      apiFirstPoint1:
+        "• Главное — чтобы тесты и интерфейс API оставались стабильными.",
+      apiFirstPoint2:
+        "• Внутренности можно менять, если внешнее поведение не ломается.",
+      additionalTitle: "💡 Дополнение",
+      additionalDesc:
+        "Модульность снижает риски: меньше зависимостей → меньше неожиданных поломок.",
+      miniProject: "Мини-проект/папка с отдельной фичей",
+      integration: "↓ интеграция",
+      mainCode: "Основной код",
+      prototypeFirst: "«Сначала прототип → потом интеграция»",
+    },
+    en: {
+      title: "⚙️ Complex Features",
+      mainIdeaTitle: "🎯 Main Idea",
+      mainIdeaDesc:
+        "If a feature is complex, don't immediately trust its implementation to LLM within a large project. Better to first build it as a separate small project/sandbox, then integrate.",
+      practiceTitle: "🔑 Practice and Tips",
+      cleanEnvTitle: "1. Clean Environment",
+      cleanEnvPoint1:
+        "• Better to implement a new complex feature in a separate repo or folder.",
+      cleanEnvPoint2: "• Easier to debug without interference from old code.",
+      referenceTitle: "2. Reference Implementation",
+      referencePoint1:
+        "• Can find a ready example on GitHub and ask LLM to repeat the approach.",
+      referencePoint2: "• Or make a minimal prototype yourself, then adapt.",
+      modularityTitle: "3. Modularity",
+      modularityPoint1:
+        "• Divide the project into small files and services with clear API.",
+      modularityPoint2:
+        "• LLM works easier if there are clear boundaries and stable external interface.",
+      apiFirstTitle: "4. API-first approach",
+      apiFirstPoint1:
+        "• Main thing is that tests and API interface remain stable.",
+      apiFirstPoint2:
+        "• Internals can be changed if external behavior doesn't break.",
+      additionalTitle: "💡 Additional",
+      additionalDesc:
+        "Modularity reduces risks: fewer dependencies → fewer unexpected breakdowns.",
+      miniProject: "Mini-project/folder with separate feature",
+      integration: "↓ integration",
+      mainCode: "Main code",
+      prototypeFirst: "'Prototype first → then integration'",
+    },
+  };
+
+  const t = content[language];
+
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">⚙️ Сложные фичи</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Left side - main content */}
@@ -24,13 +97,9 @@ export function ComplexFeaturesSlide() {
                 <div className="rounded-full bg-green-600 p-2">
                   <Target className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-green-800">🎯 Основная идея</h4>
+                <h4 className="font-bold text-green-800">{t.mainIdeaTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                Если фича сложная, не стоит сразу доверять её реализацию LLM
-                внутри большого проекта. Лучше сначала собрать её как отдельный
-                маленький проект/песочницу, а потом интегрировать.
-              </p>
+              <p className="text-sm text-gray-700">{t.mainIdeaDesc}</p>
             </CardContent>
           </Card>
 
@@ -41,60 +110,36 @@ export function ComplexFeaturesSlide() {
                 <div className="rounded-full bg-blue-600 p-2">
                   <Key className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-blue-800">
-                  🔑 Практика и советы
-                </h4>
+                <h4 className="font-bold text-blue-800">{t.practiceTitle}</h4>
               </div>
               <div className="space-y-3 text-sm text-gray-700">
                 <div>
                   <div className="font-semibold text-blue-700">
-                    1. Чистая среда
+                    {t.cleanEnvTitle}
                   </div>
-                  <div className="ml-2">
-                    • Новую сложную фичу лучше реализовать в отдельном репо или
-                    папке.
-                  </div>
-                  <div className="ml-2">
-                    • Так проще отладить без помех от старого кода.
-                  </div>
+                  <div className="ml-2">{t.cleanEnvPoint1}</div>
+                  <div className="ml-2">{t.cleanEnvPoint2}</div>
                 </div>
                 <div>
                   <div className="font-semibold text-blue-700">
-                    2. Референс-имплементация
+                    {t.referenceTitle}
                   </div>
-                  <div className="ml-2">
-                    • Можно найти готовый пример на GitHub и попросить LLM
-                    повторить подход.
-                  </div>
-                  <div className="ml-2">
-                    • Или сделать минимальный прототип самому, а затем
-                    адаптировать.
-                  </div>
+                  <div className="ml-2">{t.referencePoint1}</div>
+                  <div className="ml-2">{t.referencePoint2}</div>
                 </div>
                 <div>
                   <div className="font-semibold text-blue-700">
-                    3. Модульность
+                    {t.modularityTitle}
                   </div>
-                  <div className="ml-2">
-                    • Разделяй проект на маленькие файлы и сервисы с чётким API.
-                  </div>
-                  <div className="ml-2">
-                    • LLM легче работает, если есть ясные границы и стабильный
-                    внешний интерфейс.
-                  </div>
+                  <div className="ml-2">{t.modularityPoint1}</div>
+                  <div className="ml-2">{t.modularityPoint2}</div>
                 </div>
                 <div>
                   <div className="font-semibold text-blue-700">
-                    4. API-first подход
+                    {t.apiFirstTitle}
                   </div>
-                  <div className="ml-2">
-                    • Главное — чтобы тесты и интерфейс API оставались
-                    стабильными.
-                  </div>
-                  <div className="ml-2">
-                    • Внутренности можно менять, если внешнее поведение не
-                    ломается.
-                  </div>
+                  <div className="ml-2">{t.apiFirstPoint1}</div>
+                  <div className="ml-2">{t.apiFirstPoint2}</div>
                 </div>
               </div>
             </CardContent>
@@ -107,12 +152,11 @@ export function ComplexFeaturesSlide() {
                 <div className="rounded-full bg-purple-600 p-2">
                   <Lightbulb className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-purple-800">💡 Дополнение</h4>
+                <h4 className="font-bold text-purple-800">
+                  {t.additionalTitle}
+                </h4>
               </div>
-              <p className="text-sm text-gray-700">
-                Модульность снижает риски: меньше зависимостей → меньше
-                неожиданных поломок.
-              </p>
+              <p className="text-sm text-gray-700">{t.additionalDesc}</p>
             </CardContent>
           </Card>
         </div>
@@ -131,15 +175,15 @@ export function ComplexFeaturesSlide() {
             </div>
             <div className="space-y-2 text-sm">
               <div className="rounded-md bg-blue-100 p-2 text-blue-800">
-                Мини-проект/папка с отдельной фичей
+                {t.miniProject}
               </div>
-              <div className="text-xs text-gray-500">↓ интеграция</div>
+              <div className="text-xs text-gray-500">{t.integration}</div>
               <div className="rounded-md bg-green-100 p-2 text-green-800">
-                Основной код
+                {t.mainCode}
               </div>
             </div>
             <div className="mt-4 rounded-md bg-yellow-100 p-2 text-sm font-medium text-yellow-800">
-              «Сначала прототип → потом интеграция»
+              {t.prototypeFirst}
             </div>
           </div>
         </div>

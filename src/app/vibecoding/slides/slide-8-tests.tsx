@@ -8,11 +8,82 @@ import {
   Shield,
   GitCommit,
 } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function TestsSlide() {
+  const { language } = useLanguage();
+
+  const content = {
+    ru: {
+      title: "🧪 Тесты",
+      problemTitle: "⚠️ Проблема",
+      problemDesc:
+        "LLM часто вносит ненужные изменения в другие части проекта. Один фикс → ломается что-то ещё.",
+      solutionTitle: "✅ Решение",
+      solutionDesc:
+        "Интеграционные тесты ловят регрессии и задают «жёсткие правила» для модели.",
+      practiceTitle: "✍️ Практика",
+      practicePoint1:
+        "• Начните с написания тестов вручную (ручной каркас → AI дополняет).",
+      practicePoint2: "• После каждой новой фичи: тесты → проверка → commit.",
+      highLevelTitle: "🔗 Высокоуровневые тесты",
+      highLevelDesc:
+        "Фокус на end-to-end сценариях, имитирующих реальные действия пользователя.",
+      terminalTitle: "Terminal - npm test",
+      test1: "✓ Test 1: User auth",
+      test2: "✓ Test 2: Form validation",
+      test3: "✓ Test 3: API integration",
+      test4: "✓ Test 4: Database ops",
+      test5: "✓ Test 5: UI components",
+      test6: "✓ Test 6: Error handling",
+      test7: "✓ Test 7: Performance",
+      test8: "✓ Test 8: Security",
+      test15: "✓ Test 15: E2E flow",
+      test23: "✓ Test 23: Integration",
+      test31: "✓ Test 31: Unit tests",
+      allPassed: "✓ All tests passed",
+      summary: "Tests: 31 passed, 0 failed",
+      time: "Time: 2.4s",
+    },
+    en: {
+      title: "🧪 Tests",
+      problemTitle: "⚠️ Problem",
+      problemDesc:
+        "LLM often makes unnecessary changes to other parts of the project. One fix → something else breaks.",
+      solutionTitle: "✅ Solution",
+      solutionDesc:
+        "Integration tests catch regressions and set 'hard rules' for the model.",
+      practiceTitle: "✍️ Practice",
+      practicePoint1:
+        "• Start by writing tests manually (manual framework → AI complements).",
+      practicePoint2:
+        "• After each new feature: tests → verification → commit.",
+      highLevelTitle: "🔗 High-level tests",
+      highLevelDesc:
+        "Focus on end-to-end scenarios that simulate real user actions.",
+      terminalTitle: "Terminal - npm test",
+      test1: "✓ Test 1: User auth",
+      test2: "✓ Test 2: Form validation",
+      test3: "✓ Test 3: API integration",
+      test4: "✓ Test 4: Database ops",
+      test5: "✓ Test 5: UI components",
+      test6: "✓ Test 6: Error handling",
+      test7: "✓ Test 7: Performance",
+      test8: "✓ Test 8: Security",
+      test15: "✓ Test 15: E2E flow",
+      test23: "✓ Test 23: Integration",
+      test31: "✓ Test 31: Unit tests",
+      allPassed: "✓ All tests passed",
+      summary: "Tests: 31 passed, 0 failed",
+      time: "Time: 2.4s",
+    },
+  };
+
+  const t = content[language];
+
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">🧪 Тесты</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
 
       {/* Main content with image */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -25,12 +96,9 @@ export function TestsSlide() {
                 <div className="rounded-full bg-red-600 p-2">
                   <AlertTriangle className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-red-800">⚠️ Проблема</h4>
+                <h4 className="font-bold text-red-800">{t.problemTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                LLM часто вносит ненужные изменения в другие части проекта. Один
-                фикс → ломается что-то ещё.
-              </p>
+              <p className="text-sm text-gray-700">{t.problemDesc}</p>
             </CardContent>
           </Card>
 
@@ -41,12 +109,9 @@ export function TestsSlide() {
                 <div className="rounded-full bg-green-600 p-2">
                   <Shield className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-green-800">✅ Решение</h4>
+                <h4 className="font-bold text-green-800">{t.solutionTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">
-                Интеграционные тесты ловят регрессии и задают &ldquo;жёсткие
-                правила&rdquo; для модели.
-              </p>
+              <p className="text-sm text-gray-700">{t.solutionDesc}</p>
             </CardContent>
           </Card>
 
@@ -57,14 +122,11 @@ export function TestsSlide() {
                 <div className="rounded-full bg-blue-600 p-2">
                   <Brain className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-blue-800">✍️ Практика</h4>
+                <h4 className="font-bold text-blue-800">{t.practiceTitle}</h4>
               </div>
               <ul className="space-y-1 text-sm text-gray-700">
-                <li>
-                  • Начните с написания тестов вручную (ручной каркас → AI
-                  дополняет).
-                </li>
-                <li>• После каждой новой фичи: тесты → проверка → commit.</li>
+                <li>{t.practicePoint1}</li>
+                <li>{t.practicePoint2}</li>
               </ul>
             </CardContent>
           </Card>
@@ -77,13 +139,10 @@ export function TestsSlide() {
                   <TestTube className="h-5 w-5 text-white" />
                 </div>
                 <h4 className="font-bold text-purple-800">
-                  🔗 Высокоуровневые тесты
+                  {t.highLevelTitle}
                 </h4>
               </div>
-              <p className="text-sm text-gray-700">
-                Фокус на end-to-end сценариях, имитирующих реальные действия
-                пользователя.
-              </p>
+              <p className="text-sm text-gray-700">{t.highLevelDesc}</p>
             </CardContent>
           </Card>
         </div>
@@ -98,32 +157,32 @@ export function TestsSlide() {
                 <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
                 <div className="h-3 w-3 rounded-full bg-green-500"></div>
               </div>
-              <span className="text-gray-400">Terminal - npm test</span>
+              <span className="text-gray-400">{t.terminalTitle}</span>
             </div>
 
             {/* Test results */}
             <div className="space-y-1 text-green-400">
-              <div>✓ Test 1: User auth</div>
-              <div>✓ Test 2: Form validation</div>
-              <div>✓ Test 3: API integration</div>
-              <div>✓ Test 4: Database ops</div>
-              <div>✓ Test 5: UI components</div>
-              <div>✓ Test 6: Error handling</div>
-              <div>✓ Test 7: Performance</div>
-              <div>✓ Test 8: Security</div>
+              <div>{t.test1}</div>
+              <div>{t.test2}</div>
+              <div>{t.test3}</div>
+              <div>{t.test4}</div>
+              <div>{t.test5}</div>
+              <div>{t.test6}</div>
+              <div>{t.test7}</div>
+              <div>{t.test8}</div>
               <div className="text-gray-300">...</div>
-              <div>✓ Test 15: E2E flow</div>
+              <div>{t.test15}</div>
               <div className="text-gray-300">...</div>
-              <div>✓ Test 23: Integration</div>
+              <div>{t.test23}</div>
               <div className="text-gray-300">...</div>
-              <div>✓ Test 31: Unit tests</div>
+              <div>{t.test31}</div>
             </div>
 
             {/* Summary */}
             <div className="mt-4 border-t border-gray-700 pt-3">
-              <div className="text-green-400">✓ All tests passed</div>
-              <div className="text-gray-400">Tests: 31 passed, 0 failed</div>
-              <div className="text-gray-400">Time: 2.4s</div>
+              <div className="text-green-400">{t.allPassed}</div>
+              <div className="text-gray-400">{t.summary}</div>
+              <div className="text-gray-400">{t.time}</div>
             </div>
           </div>
         </div>

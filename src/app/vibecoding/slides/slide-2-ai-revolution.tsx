@@ -1,10 +1,55 @@
+import { useLanguage } from "../contexts/LanguageContext";
+
 export function AIRevolutionSlide() {
+  const { language } = useLanguage();
+
+  const content = {
+    ru: {
+      title: "🎯 Вайб-кодинг",
+      subtitle: "Зачем?",
+      karpathyName: "Andrej Karpathy",
+      karpathyQuote: '"Vibe coding is about trusting your gut"',
+      software30Title: "Software 3.0",
+      software30Subtitle: "The next evolution of development",
+      productivityTitle: "+15–20% продуктивности",
+      productivityDesc:
+        "Стэнфорд, база 100k+ инженеров из 600+ компаний (средний прирост).",
+      productivityNote:
+        "AI-инструменты ускоряют разработку и повышают продуктивность программистов",
+      googleTitle: "Google PM интервью → Vibe Coding",
+      googleDesc:
+        "45 минут: live-прототип с AI-инструментами вместо классического кейса.",
+      googleNote:
+        "Уже в Google и других компаниях PM задаются задачи на вайб-кодинг в реал-тайме",
+    },
+    en: {
+      title: "🎯 Vibe Coding",
+      subtitle: "Why?",
+      karpathyName: "Andrej Karpathy",
+      karpathyQuote: '"Vibe coding is about trusting your gut"',
+      software30Title: "Software 3.0",
+      software30Subtitle: "The next evolution of development",
+      productivityTitle: "+15–20% productivity",
+      productivityDesc:
+        "Stanford, database of 100k+ engineers from 600+ companies (average increase).",
+      productivityNote:
+        "AI tools accelerate development and increase programmer productivity",
+      googleTitle: "Google PM interview → Vibe Coding",
+      googleDesc:
+        "45 minutes: live prototype with AI tools instead of classic case study.",
+      googleNote:
+        "Already in Google and other companies, PMs are given vibe coding tasks in real-time",
+    },
+  };
+
+  const t = content[language];
+
   return (
     <div className="space-y-8">
       {/* Main headers */}
       <div className="space-y-2 text-center">
-        <h2 className="text-3xl font-bold text-gray-900">🎯 Вайб-кодинг</h2>
-        <h3 className="text-xl text-gray-600">Зачем?</h3>
+        <h2 className="text-3xl font-bold text-gray-900">{t.title}</h2>
+        <h3 className="text-xl text-gray-600">{t.subtitle}</h3>
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -19,11 +64,9 @@ export function AIRevolutionSlide() {
           </div>
           <div className="text-center">
             <h4 className="font-mono text-lg font-semibold text-gray-800">
-              Andrej Karpathy
+              {t.karpathyName}
             </h4>
-            <p className="text-sm text-gray-600">
-              &quot;Vibe coding is about trusting your gut&quot;
-            </p>
+            <p className="text-sm text-gray-600">{t.karpathyQuote}</p>
           </div>
         </div>
 
@@ -38,11 +81,9 @@ export function AIRevolutionSlide() {
           </div>
           <div className="text-center">
             <h4 className="font-mono text-lg font-semibold text-gray-800">
-              Software 3.0
+              {t.software30Title}
             </h4>
-            <p className="text-sm text-gray-600">
-              The next evolution of development
-            </p>
+            <p className="text-sm text-gray-600">{t.software30Subtitle}</p>
           </div>
         </div>
       </div>
@@ -67,14 +108,11 @@ export function AIRevolutionSlide() {
                 />
               </svg>
             </div>
-            <h4 className="font-bold text-blue-800">+15–20% продуктивности</h4>
+            <h4 className="font-bold text-blue-800">{t.productivityTitle}</h4>
           </div>
-          <p className="mb-3 text-sm text-gray-700">
-            Стэнфорд, база 100k+ инженеров из 600+ компаний (средний прирост).
-          </p>
+          <p className="mb-3 text-sm text-gray-700">{t.productivityDesc}</p>
           <div className="text-xs font-medium text-blue-600">
-            AI-инструменты ускоряют разработку и повышают продуктивность
-            программистов
+            {t.productivityNote}
           </div>
         </div>
 
@@ -96,17 +134,11 @@ export function AIRevolutionSlide() {
                 />
               </svg>
             </div>
-            <h4 className="font-bold text-green-800">
-              Google PM интервью → Vibe Coding
-            </h4>
+            <h4 className="font-bold text-green-800">{t.googleTitle}</h4>
           </div>
-          <p className="mb-3 text-sm text-gray-700">
-            45 минут: live-прототип с AI-инструментами вместо классического
-            кейса.
-          </p>
+          <p className="mb-3 text-sm text-gray-700">{t.googleDesc}</p>
           <div className="text-xs font-medium text-green-600">
-            Уже в Google и других компаниях PM задаются задачи на вайб-кодинг в
-            реал-тайме
+            {t.googleNote}
           </div>
         </div>
       </div>

@@ -2,8 +2,9 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
+import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import {
   HeroSlide,
   AIRevolutionSlide,
@@ -83,7 +84,34 @@ function SlideContent({ slide }: { slide: (typeof slides)[0] }) {
   );
 }
 
-export default function VibeCodingPage() {
+function LanguageSwitcher() {
+  const { language, setLanguage } = useLanguage();
+
+  return (
+    <div className="fixed left-4 top-4 z-50">
+      <div className="flex gap-2">
+        <Button
+          variant={language === "ru" ? "default" : "outline"}
+          size="sm"
+          onClick={() => setLanguage("ru")}
+          className="min-w-[60px]"
+        >
+          RU
+        </Button>
+        <Button
+          variant={language === "en" ? "default" : "outline"}
+          size="sm"
+          onClick={() => setLanguage("en")}
+          className="min-w-[60px]"
+        >
+          EN
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function VibeCodingContent() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -117,6 +145,9 @@ export default function VibeCodingPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
+      {/* Language Switcher */}
+      <LanguageSwitcher />
+
       {/* Slide Navigation */}
       <div className="fixed right-4 top-4 z-50">
         <div className="flex gap-2">
@@ -168,5 +199,13 @@ export default function VibeCodingPage() {
         <SlideContent slide={slides[currentSlide]} />
       </div>
     </main>
+  );
+}
+
+export default function VibeCodingPage() {
+  return (
+    <LanguageProvider>
+      <VibeCodingContent />
+    </LanguageProvider>
   );
 }
