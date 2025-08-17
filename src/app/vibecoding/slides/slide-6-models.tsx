@@ -52,7 +52,9 @@ export function ModelsSlide() {
 
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
+        {t.title}
+      </h2>
 
       {/* Main content with image */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -69,45 +71,55 @@ export function ModelsSlide() {
 
         {/* Right side - Models list */}
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold text-gray-900">{t.subtitle}</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            {t.subtitle}
+          </h3>
 
           <div className="space-y-4">
             {/* Claude 4.0 Sonnet */}
-            <Card className="border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+            <Card className="border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 dark:border-blue-700 dark:from-blue-900/20 dark:to-indigo-900/20">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
                   <Brain className="h-6 w-6 text-blue-600" />
                   <div>
                     <h4 className="font-bold text-blue-800">{t.claudeTitle}</h4>
-                    <p className="text-sm text-gray-600">{t.claudeDesc}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {t.claudeDesc}
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Gemini */}
-            <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
+            <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 dark:border-green-700 dark:from-green-900/20 dark:to-emerald-900/20">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
                   <Zap className="h-6 w-6 text-green-600" />
                   <div>
-                    <h4 className="font-bold text-green-800">
+                    <h4 className="font-bold text-green-800 dark:text-green-300">
                       {t.geminiTitle}
                     </h4>
-                    <p className="text-sm text-gray-600">{t.geminiDesc}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {t.geminiDesc}
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* o1/Claude Opus */}
-            <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-violet-50">
+            <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-violet-50 dark:border-purple-700 dark:from-purple-900/20 dark:to-violet-900/20">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
                   <Brain className="h-6 w-6 text-purple-600" />
                   <div>
-                    <h4 className="font-bold text-purple-800">{t.opusTitle}</h4>
-                    <p className="text-sm text-gray-600">{t.opusDesc}</p>
+                    <h4 className="font-bold text-purple-800 dark:text-purple-300">
+                      {t.opusTitle}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {t.opusDesc}
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -117,12 +129,12 @@ export function ModelsSlide() {
       </div>
 
       {/* Bottom tip */}
-      <Card className="border-yellow-200 bg-gradient-to-r from-yellow-50 to-orange-50">
+      <Card className="border-yellow-200 bg-gradient-to-r from-yellow-50 to-orange-50 dark:border-yellow-700 dark:from-yellow-900/20 dark:to-orange-900/20">
         <CardContent className="p-6">
-          <h3 className="mb-4 text-xl font-bold text-yellow-800">
+          <h3 className="mb-4 text-xl font-bold text-yellow-800 dark:text-yellow-300">
             {t.strategyTitle}
           </h3>
-          <div className="space-y-2 text-gray-700">
+          <div className="space-y-2 text-gray-700 dark:text-gray-300">
             <p className="flex items-center gap-2">
               <Badge variant="outline" className="bg-red-100 text-red-800">
                 {t.preparation}

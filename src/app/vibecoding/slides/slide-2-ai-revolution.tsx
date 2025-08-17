@@ -48,8 +48,12 @@ export function AIRevolutionSlide() {
     <div className="space-y-8">
       {/* Main headers */}
       <div className="space-y-2 text-center">
-        <h2 className="text-3xl font-bold text-gray-900">{t.title}</h2>
-        <h3 className="text-xl text-gray-600">{t.subtitle}</h3>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+          {t.title}
+        </h2>
+        <h3 className="text-xl text-gray-600 dark:text-gray-400">
+          {t.subtitle}
+        </h3>
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -63,10 +67,12 @@ export function AIRevolutionSlide() {
             />
           </div>
           <div className="text-center">
-            <h4 className="font-mono text-lg font-semibold text-gray-800">
+            <h4 className="font-mono text-lg font-semibold text-gray-800 dark:text-gray-200">
               {t.karpathyName}
             </h4>
-            <p className="text-sm text-gray-600">{t.karpathyQuote}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {t.karpathyQuote}
+            </p>
           </div>
         </div>
 
@@ -80,10 +86,12 @@ export function AIRevolutionSlide() {
             />
           </div>
           <div className="text-center">
-            <h4 className="font-mono text-lg font-semibold text-gray-800">
+            <h4 className="font-mono text-lg font-semibold text-gray-800 dark:text-gray-200">
               {t.software30Title}
             </h4>
-            <p className="text-sm text-gray-600">{t.software30Subtitle}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {t.software30Subtitle}
+            </p>
           </div>
         </div>
       </div>
@@ -110,8 +118,10 @@ export function AIRevolutionSlide() {
             </div>
             <h4 className="font-bold text-blue-800">{t.productivityTitle}</h4>
           </div>
-          <p className="mb-3 text-sm text-gray-700">{t.productivityDesc}</p>
-          <div className="text-xs font-medium text-blue-600">
+          <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">
+            {t.productivityDesc}
+          </p>
+          <div className="text-xs font-medium text-blue-600 dark:text-blue-400">
             {t.productivityNote}
           </div>
         </div>
@@ -136,8 +146,10 @@ export function AIRevolutionSlide() {
             </div>
             <h4 className="font-bold text-green-800">{t.googleTitle}</h4>
           </div>
-          <p className="mb-3 text-sm text-gray-700">{t.googleDesc}</p>
-          <div className="text-xs font-medium text-green-600">
+          <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">
+            {t.googleDesc}
+          </p>
+          <div className="text-xs font-medium text-green-600 dark:text-green-400">
             {t.googleNote}
           </div>
         </div>

@@ -85,13 +85,15 @@ export function ComplexFeaturesSlide() {
 
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
+        {t.title}
+      </h2>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Left side - main content */}
         <div className="space-y-6">
           {/* Main idea - Green block */}
-          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 dark:border-green-700 dark:from-green-900/20 dark:to-emerald-900/20">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-green-600 p-2">
@@ -99,43 +101,47 @@ export function ComplexFeaturesSlide() {
                 </div>
                 <h4 className="font-bold text-green-800">{t.mainIdeaTitle}</h4>
               </div>
-              <p className="text-sm text-gray-700">{t.mainIdeaDesc}</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                {t.mainIdeaDesc}
+              </p>
             </CardContent>
           </Card>
 
           {/* Practice and tips - Blue block */}
-          <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
+          <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 dark:border-blue-700 dark:from-blue-900/20 dark:to-indigo-900/20">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-blue-600 p-2">
                   <Key className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-blue-800">{t.practiceTitle}</h4>
+                <h4 className="font-bold text-blue-800 dark:text-blue-300">
+                  {t.practiceTitle}
+                </h4>
               </div>
-              <div className="space-y-3 text-sm text-gray-700">
+              <div className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
                 <div>
-                  <div className="font-semibold text-blue-700">
+                  <div className="font-semibold text-blue-700 dark:text-blue-300">
                     {t.cleanEnvTitle}
                   </div>
                   <div className="ml-2">{t.cleanEnvPoint1}</div>
                   <div className="ml-2">{t.cleanEnvPoint2}</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-blue-700">
+                  <div className="font-semibold text-blue-700 dark:text-blue-300">
                     {t.referenceTitle}
                   </div>
                   <div className="ml-2">{t.referencePoint1}</div>
                   <div className="ml-2">{t.referencePoint2}</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-blue-700">
+                  <div className="font-semibold text-blue-700 dark:text-blue-300">
                     {t.modularityTitle}
                   </div>
                   <div className="ml-2">{t.modularityPoint1}</div>
                   <div className="ml-2">{t.modularityPoint2}</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-blue-700">
+                  <div className="font-semibold text-blue-700 dark:text-blue-300">
                     {t.apiFirstTitle}
                   </div>
                   <div className="ml-2">{t.apiFirstPoint1}</div>
@@ -146,24 +152,26 @@ export function ComplexFeaturesSlide() {
           </Card>
 
           {/* Additional info - Purple block */}
-          <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-violet-50">
+          <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-violet-50 dark:border-purple-700 dark:from-purple-900/20 dark:to-violet-900/20">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-purple-600 p-2">
                   <Lightbulb className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-purple-800">
+                <h4 className="font-bold text-purple-800 dark:text-purple-300">
                   {t.additionalTitle}
                 </h4>
               </div>
-              <p className="text-sm text-gray-700">{t.additionalDesc}</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                {t.additionalDesc}
+              </p>
             </CardContent>
           </Card>
         </div>
 
         {/* Right side - Illustration */}
         <div className="flex items-center justify-center">
-          <div className="rounded-lg border border-gray-200 bg-gradient-to-br from-gray-50 to-slate-50 p-6 text-center">
+          <div className="rounded-lg border border-gray-200 bg-gradient-to-br from-gray-50 to-slate-50 p-6 text-center dark:border-gray-700 dark:from-gray-900/20 dark:to-slate-900/20">
             <div className="mb-4 flex items-center justify-center gap-2">
               <div className="rounded-lg bg-blue-100 p-3">
                 <FolderOpen className="h-8 w-8 text-blue-600" />

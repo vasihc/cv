@@ -105,13 +105,15 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
 
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
+        {t.title}
+      </h2>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Left Side - Cursor IDE */}
         <div className="space-y-6">
           <div className="mb-4">
-            <h3 className="mb-2 text-xl font-semibold text-gray-800">
+            <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-200">
               {t.cursorTitle}
             </h3>
             <a
@@ -125,20 +127,20 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
           </div>
 
           {/* Project Rules Setup */}
-          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 transition-shadow hover:shadow-lg">
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 dark:border-green-700 transition-shadow hover:shadow-lg">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <FileText className="h-6 w-6 text-green-600" />
-                <h4 className="font-bold text-green-800">
+                <h4 className="font-bold text-green-800 dark:text-green-300">
                   {t.projectRulesTitle}
                 </h4>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="mb-3 text-sm leading-relaxed text-gray-700">
+              <p className="mb-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                 {t.projectRulesDesc}
               </p>
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-green-500"></div>
                   <span className="font-mono">{t.rulesFile1}</span>
@@ -157,7 +159,7 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
         {/* Right Side - Wispr Flow */}
         <div className="space-y-6">
           <div className="mb-4">
-            <h3 className="mb-2 text-xl font-semibold text-gray-800">
+            <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-200">
               {t.wisprTitle}
             </h3>
             <a
@@ -171,7 +173,7 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
           </div>
 
           {/* Cursor Integration */}
-          <Card className="border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 transition-shadow hover:shadow-lg">
+          <Card className="border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 dark:border-cyan-700 transition-shadow hover:shadow-lg">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <Mic className="h-6 w-6 text-cyan-600" />
@@ -179,7 +181,7 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
               </div>
             </CardHeader>
             <CardContent>
-              <p className="mb-3 text-sm leading-relaxed text-gray-700">
+              <p className="mb-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                 <strong>{t.voiceFeature}</strong> {t.voiceDesc}
               </p>
               <div className="rounded bg-gray-900 p-3 font-mono text-sm text-green-400">
@@ -194,7 +196,7 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
 
       {/* User Rules Section */}
       <div className="mt-8 space-y-6">
-        <h3 className="text-xl font-semibold text-gray-800">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
           {t.userRulesTitle}
         </h3>
 

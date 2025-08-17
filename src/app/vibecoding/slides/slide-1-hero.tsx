@@ -47,8 +47,8 @@ export function HeroSlide() {
         {/* Left column - Main content */}
         <div className="space-y-6">
           {/* Code reference */}
-          <div className="rounded-lg bg-gray-100 p-4 font-mono text-sm">
-            <div className="text-gray-600">
+          <div className="rounded-lg bg-gray-100 p-4 font-mono text-sm dark:bg-gray-800">
+            <div className="text-gray-600 dark:text-gray-300">
               <span className="text-blue-600">const</span>{" "}
               <span className="text-purple-600">presentation</span> = {"{"}
             </div>
@@ -56,21 +56,27 @@ export function HeroSlide() {
 
           {/* Title and subtitle */}
           <div className="space-y-3">
-            <h1 className="text-4xl font-bold text-gray-900">{t.title}</h1>
-            <p className="text-xl text-gray-600">{t.subtitle}</p>
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+              {t.title}
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400">
+              {t.subtitle}
+            </p>
           </div>
 
           {/* Speaker info */}
           <div className="space-y-2">
-            <div className="text-lg text-gray-700">
+            <div className="text-lg text-gray-700 dark:text-gray-300">
               <span className="font-semibold">{t.speaker}</span>
             </div>
-            <div className="text-sm text-gray-500">{t.date}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              {t.date}
+            </div>
           </div>
 
           {/* Closing brace */}
-          <div className="rounded-lg bg-gray-100 p-4 font-mono text-sm">
-            <div className="text-gray-600">{"}"}</div>
+          <div className="rounded-lg bg-gray-100 p-4 font-mono text-sm dark:bg-gray-800">
+            <div className="text-gray-600 dark:text-gray-300">{"}"}</div>
           </div>
         </div>
 

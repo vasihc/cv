@@ -75,35 +75,43 @@ export function ChooseStackSlide() {
 
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
+        {t.title}
+      </h2>
 
       {/* Main content with illustration */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Left side - main content */}
         <div className="space-y-6">
           {/* Main idea */}
-          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 dark:border-green-700 dark:from-green-900/20 dark:to-emerald-900/20">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-green-600 p-2">
                   <Target className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-green-800">{t.mainIdeaTitle}</h4>
+                <h4 className="font-bold text-green-800 dark:text-green-300">
+                  {t.mainIdeaTitle}
+                </h4>
               </div>
-              <p className="text-sm text-gray-700">{t.mainIdeaDesc}</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                {t.mainIdeaDesc}
+              </p>
             </CardContent>
           </Card>
 
           {/* Practice and tips */}
-          <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
+          <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 dark:border-blue-700 dark:from-blue-900/20 dark:to-indigo-900/20">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-blue-600 p-2">
                   <Lightbulb className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-blue-800">{t.practiceTitle}</h4>
+                <h4 className="font-bold text-blue-800 dark:text-blue-300">
+                  {t.practiceTitle}
+                </h4>
               </div>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
                 <li>
                   • <Database className="inline h-3 w-3" /> {t.supabase}
                 </li>
@@ -127,15 +135,19 @@ export function ChooseStackSlide() {
           </Card>
 
           {/* Resource */}
-          <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-yellow-50">
+          <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-yellow-50 dark:border-orange-700 dark:from-orange-900/20 dark:to-yellow-900/20">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-orange-600 p-2">
                   <ExternalLink className="h-5 w-5 text-white" />
                 </div>
-                <h4 className="font-bold text-orange-800">{t.resourceTitle}</h4>
+                <h4 className="font-bold text-orange-800 dark:text-orange-300">
+                  {t.resourceTitle}
+                </h4>
               </div>
-              <p className="text-sm text-gray-700">{t.resourceDesc}</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                {t.resourceDesc}
+              </p>
               <a
                 href="https://vibecoding.tools"
                 target="_blank"
@@ -151,71 +163,71 @@ export function ChooseStackSlide() {
 
         {/* Right side - tech stack illustration */}
         <div className="flex items-center justify-center">
-          <div className="h-[28rem] w-full rounded-lg border border-gray-200 bg-gradient-to-br from-gray-50 to-slate-100 p-6">
+          <div className="h-[28rem] w-full rounded-lg border border-gray-200 bg-gradient-to-br from-gray-50 to-slate-100 p-6 dark:border-gray-700 dark:from-gray-900/20 dark:to-slate-900/20">
             {/* Tech logos grid */}
             <div className="mb-6 text-center">
-              <h3 className="mb-4 text-lg font-bold text-gray-800">
+              <h3 className="mb-4 text-lg font-bold text-gray-800 dark:text-gray-200">
                 {t.popularTechTitle}
               </h3>
 
               {/* Logo grid */}
               <div className="grid grid-cols-3 gap-4">
                 {/* Postgres */}
-                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm">
+                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
                     <Database className="h-6 w-6 text-blue-600" />
                   </div>
-                  <span className="text-xs font-medium text-gray-700">
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                     {t.postgresLabel}
                   </span>
                 </div>
 
                 {/* Firebase */}
-                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm">
+                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
                     <Database className="h-6 w-6 text-orange-600" />
                   </div>
-                  <span className="text-xs font-medium text-gray-700">
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                     {t.firebaseLabel}
                   </span>
                 </div>
 
                 {/* Node.js */}
-                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm">
+                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
                     <Code className="h-6 w-6 text-green-600" />
                   </div>
-                  <span className="text-xs font-medium text-gray-700">
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                     {t.nodejsLabel}
                   </span>
                 </div>
 
                 {/* Python */}
-                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm">
+                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
                     <Code className="h-6 w-6 text-blue-600" />
                   </div>
-                  <span className="text-xs font-medium text-gray-700">
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                     {t.pythonLabel}
                   </span>
                 </div>
 
                 {/* Swift */}
-                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm">
+                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
                     <Smartphone className="h-6 w-6 text-orange-600" />
                   </div>
-                  <span className="text-xs font-medium text-gray-700">
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                     {t.swiftLabel}
                   </span>
                 </div>
 
                 {/* Tailwind */}
-                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm">
+                <div className="flex flex-col items-center rounded-lg bg-white p-3 shadow-sm dark:bg-gray-800">
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-100">
                     <Palette className="h-6 w-6 text-cyan-600" />
                   </div>
-                  <span className="text-xs font-medium text-gray-700">
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                     {t.tailwindLabel}
                   </span>
                 </div>
@@ -223,9 +235,11 @@ export function ChooseStackSlide() {
             </div>
 
             {/* Quote */}
-            <div className="rounded-lg bg-white p-4 shadow-sm">
+            <div className="rounded-lg bg-white p-4 shadow-sm dark:bg-gray-800">
               <div className="text-center">
-                <p className="text-sm font-medium text-gray-800">{t.quote}</p>
+                <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                  {t.quote}
+                </p>
                 <div className="mt-2 flex justify-center">
                   <div className="flex gap-1">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>

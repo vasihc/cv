@@ -49,72 +49,90 @@ export function VersionControlSlide() {
 
   return (
     <div className="space-y-8">
-      <h2 className="mb-6 text-center text-4xl font-bold">{t.title}</h2>
+      <h2 className="mb-6 text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
+        {t.title}
+      </h2>
 
       {/* Main principle */}
-      <div className="rounded-lg border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-6">
+      <div className="rounded-lg border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 dark:border-blue-700 dark:from-blue-900/20 dark:to-indigo-900/20">
         <div className="mb-4 flex items-center gap-3">
           <div className="rounded-full bg-blue-600 p-2">
             <GitBranch className="h-6 w-6 text-white" />
           </div>
-          <h3 className="text-xl font-bold text-blue-800">
+          <h3 className="text-xl font-bold text-blue-800 dark:text-blue-300">
             {t.principleTitle}
           </h3>
         </div>
-        <p className="text-gray-700">{t.principleDesc}</p>
+        <p className="text-gray-700 dark:text-gray-300">{t.principleDesc}</p>
       </div>
 
       {/* Four key points */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {/* Point 1 */}
-        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
+        <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 dark:border-green-700 dark:from-green-900/20 dark:to-emerald-900/20">
           <CardContent className="p-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="rounded-full bg-green-600 p-2">
                 <CheckCircle className="h-5 w-5 text-white" />
               </div>
-              <h4 className="font-bold text-green-800">{t.point1Title}</h4>
+              <h4 className="font-bold text-green-800 dark:text-green-300">
+                {t.point1Title}
+              </h4>
             </div>
-            <p className="text-sm text-gray-700">{t.point1Desc}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300">
+              {t.point1Desc}
+            </p>
           </CardContent>
         </Card>
 
         {/* Point 2 */}
-        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 dark:border-blue-700 dark:from-blue-900/20 dark:to-indigo-900/20">
           <CardContent className="p-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="rounded-full bg-blue-600 p-2">
                 <GitBranch className="h-5 w-5 text-white" />
               </div>
-              <h4 className="font-bold text-blue-800">{t.point2Title}</h4>
+              <h4 className="font-bold text-blue-800 dark:text-blue-300">
+                {t.point2Title}
+              </h4>
             </div>
-            <p className="text-sm text-gray-700">{t.point2Desc}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300">
+              {t.point2Desc}
+            </p>
           </CardContent>
         </Card>
 
         {/* Point 3 */}
-        <Card className="border-red-200 bg-gradient-to-br from-red-50 to-pink-50">
+        <Card className="border-red-200 bg-gradient-to-br from-red-50 to-pink-50 dark:border-red-700 dark:from-red-900/20 dark:to-pink-900/20">
           <CardContent className="p-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="rounded-full bg-red-600 p-2">
                 <RotateCcw className="h-5 w-5 text-white" />
               </div>
-              <h4 className="font-bold text-red-800">{t.point3Title}</h4>
+              <h4 className="font-bold text-red-800 dark:text-red-300">
+                {t.point3Title}
+              </h4>
             </div>
-            <p className="text-sm text-gray-700">{t.point3Desc}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300">
+              {t.point3Desc}
+            </p>
           </CardContent>
         </Card>
 
         {/* Point 4 */}
-        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-violet-50">
+        <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-violet-50 dark:border-purple-700 dark:from-purple-900/20 dark:to-violet-900/20">
           <CardContent className="p-6">
             <div className="mb-4 flex items-center gap-3">
               <div className="rounded-full bg-purple-600 p-2">
                 <RotateCcw className="h-5 w-5 text-white" />
               </div>
-              <h4 className="font-bold text-purple-800">{t.point4Title}</h4>
+              <h4 className="font-bold text-purple-800 dark:text-purple-300">
+                {t.point4Title}
+              </h4>
             </div>
-            <p className="text-sm text-gray-700">{t.point4Desc}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300">
+              {t.point4Desc}
+            </p>
           </CardContent>
         </Card>
       </div>

@@ -80,7 +80,9 @@ export function AdvancedSlide() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h2 className="mb-2 text-4xl font-bold">{t.title}</h2>
+        <h2 className="mb-2 text-4xl font-bold text-gray-900 dark:text-gray-100">
+          {t.title}
+        </h2>
       </div>
 
       {/* Two-column layout */}
@@ -88,12 +90,12 @@ export function AdvancedSlide() {
         {/* Left column - 60% */}
         <div className="flex-1 space-y-4">
           {/* Key techniques */}
-          <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50">
+          <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 dark:border-blue-700 dark:from-blue-900/20 dark:to-indigo-900/20">
             <CardContent className="p-4">
-              <h4 className="mb-2 font-bold text-blue-800">
+              <h4 className="mb-2 font-bold text-blue-800 dark:text-blue-300">
                 {t.techniquesTitle}
               </h4>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
                 <li>{t.planMode}</li>
                 <li>{t.claudeMd}</li>
                 <li>{t.gitCheckpoints}</li>
@@ -107,12 +109,12 @@ export function AdvancedSlide() {
           </Card>
 
           {/* Advantages */}
-          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 dark:border-green-700 dark:from-green-900/20 dark:to-emerald-900/20">
             <CardContent className="p-4">
-              <h4 className="mb-2 font-bold text-green-800">
+              <h4 className="mb-2 font-bold text-green-800 dark:text-green-300">
                 {t.advantagesTitle}
               </h4>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
                 <li>{t.advantage1}</li>
                 <li>{t.advantage2}</li>
                 <li>{t.advantage3}</li>
@@ -125,12 +127,12 @@ export function AdvancedSlide() {
           </Card>
 
           {/* When to stay in Cursor */}
-          <Card className="border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50">
+          <Card className="border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50 dark:border-yellow-700 dark:from-yellow-900/20 dark:to-orange-900/20">
             <CardContent className="p-4">
-              <h4 className="mb-2 font-bold text-yellow-800">
+              <h4 className="mb-2 font-bold text-yellow-800 dark:text-yellow-300">
                 {t.cursorTitle}
               </h4>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
                 <li>{t.cursorPoint1}</li>
                 <li>{t.cursorPoint2}</li>
                 <li>{t.cursorPoint3}</li>
@@ -139,12 +141,12 @@ export function AdvancedSlide() {
           </Card>
 
           {/* Risks/minuses */}
-          <Card className="border-red-200 bg-gradient-to-br from-red-50 to-pink-50">
+          <Card className="border-red-200 bg-gradient-to-br from-red-50 to-pink-50 dark:border-red-700 dark:from-red-900/20 dark:to-pink-900/20">
             <CardContent className="p-4">
-              <h4 className="mb-2 font-bold text-red-800">
+              <h4 className="mb-2 font-bold text-red-800 dark:text-red-300">
                 {t.disadvantagesTitle}
               </h4>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
                 <li>{t.disadvantage1}</li>
                 <li>{t.disadvantage2}</li>
                 <li>{t.disadvantage3}</li>

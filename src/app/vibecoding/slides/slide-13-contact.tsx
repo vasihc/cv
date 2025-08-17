@@ -61,7 +61,7 @@ export function ContactSlide() {
       {/* Main content */}
       <div className="space-y-6">
         <div className="space-y-4">
-          <h3 className="font-mono text-2xl font-semibold text-gray-900">
+          <h3 className="font-mono text-2xl font-semibold text-gray-900 dark:text-gray-100">
             {t.title}
           </h3>
         </div>

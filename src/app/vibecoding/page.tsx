@@ -2,9 +2,10 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Globe } from "lucide-react";
+import { ChevronLeft, ChevronRight, Globe, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
+import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
 import {
   HeroSlide,
   AIRevolutionSlide,
@@ -111,6 +112,27 @@ function LanguageSwitcher() {
   );
 }
 
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <div className="fixed bottom-4 left-4 z-50">
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={toggleTheme}
+        className="h-8 w-8 p-0"
+      >
+        {theme === "light" ? (
+          <Moon className="h-4 w-4" />
+        ) : (
+          <Sun className="h-4 w-4" />
+        )}
+      </Button>
+    </div>
+  );
+}
+
 function VibeCodingContent() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -144,9 +166,12 @@ function VibeCodingContent() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Language Switcher */}
       <LanguageSwitcher />
+
+      {/* Theme Toggle */}
+      <ThemeToggle />
 
       {/* Slide Navigation */}
       <div className="fixed right-4 top-4 z-50">
@@ -180,7 +205,7 @@ function VibeCodingContent() {
               className={`h-3 w-3 rounded-full transition-colors ${
                 index === currentSlide
                   ? "bg-blue-600"
-                  : "bg-gray-300 hover:bg-gray-400"
+                  : "bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500"
               }`}
             />
           ))}
@@ -204,8 +229,10 @@ function VibeCodingContent() {
 
 export default function VibeCodingPage() {
   return (
-    <LanguageProvider>
-      <VibeCodingContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <VibeCodingContent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
