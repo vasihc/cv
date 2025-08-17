@@ -11,6 +11,7 @@ import {
   FileText,
   Zap,
   Wrench,
+  Package,
 } from "lucide-react";
 
 export function BugFixSlide() {
@@ -90,6 +91,10 @@ export function BugFixSlide() {
                 <li>
                   • <Wrench className="inline h-3 w-3" /> Точный фикс на чистой
                   базе
+                </li>
+                <li>
+                  • <Package className="inline h-3 w-3" /> «Всегда уточняй
+                  версию библиотеки при багах», т.к. фикс для v3 ≠ фикс для v4
                 </li>
               </ul>
             </CardContent>
