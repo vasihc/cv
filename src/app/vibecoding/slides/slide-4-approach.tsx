@@ -131,7 +131,7 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
           </div>
 
           {/* Project Rules Setup */}
-          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 dark:border-green-700 transition-shadow hover:shadow-lg">
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 transition-shadow hover:shadow-lg dark:border-green-700 dark:from-green-900/20 dark:to-emerald-900/20">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <FileText className="h-6 w-6 text-green-600" />
@@ -156,9 +156,9 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
                   <span>{t.rulesFile2Desc}</span>
                 </div>
               </div>
-              
+
               {/* Resources Section */}
-              <div className="mt-4 pt-3 border-t border-green-200 dark:border-green-700">
+              <div className="mt-4 border-t border-green-200 pt-3 dark:border-green-700">
                 <p className="mb-2 text-sm font-medium text-green-800 dark:text-green-300">
                   {t.rulesResourcesTitle}
                 </p>
@@ -207,7 +207,7 @@ Prefer active voice over passive. - Use contractions when appropriate. Example t
           </div>
 
           {/* Cursor Integration */}
-          <Card className="border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 dark:border-cyan-700 transition-shadow hover:shadow-lg">
+          <Card className="border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 transition-shadow hover:shadow-lg dark:border-cyan-700 dark:from-cyan-900/20 dark:to-blue-900/20">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <Mic className="h-6 w-6 text-cyan-600" />
