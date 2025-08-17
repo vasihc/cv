@@ -1,0 +1,15 @@
+export { HeroSlide } from "./slide-1-hero";
+export { AIRevolutionSlide } from "./slide-2-ai-revolution";
+export { AIToolkitSlide } from "./slide-3-ai-toolkit";
+export { ApproachSlide } from "./slide-4-approach";
+export { MCPSlide } from "./slide-5-mcp";
+export { ModelsSlide } from "./slide-6-models";
+export { VersionControlSlide } from "./slide-7-version-control";
+export { TestsSlide } from "./slide-8-tests";
+export { BugFixSlide } from "./slide-9-bug-fix";
+export { DocumentationSlide } from "./slide-10-documentation";
+export { FunctionalitySlide } from "./slide-11-functionality";
+export { ChooseStackSlide } from "./slide-12-choose-stack";
+export { KeepExperimentingSlide } from "./slide-14-keep-experimenting";
+export { AdvancedSlide } from "./slide-15-advanced";
+export { ContactSlide } from "./slide-16-contact";
