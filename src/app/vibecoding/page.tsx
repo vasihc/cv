@@ -16,7 +16,6 @@ import {
   BugFixSlide,
   ComplexFeaturesSlide,
   ChooseStackSlide,
-  KeepExperimentingSlide,
   AdvancedSlide,
   ContactSlide,
 } from "./slides";
@@ -64,22 +63,14 @@ const slides = [
   },
   {
     id: 11,
-    content: <ComplexFeaturesSlide />,
-  },
-  {
-    id: 12,
     content: <ChooseStackSlide />,
   },
   {
-    id: 14,
-    content: <KeepExperimentingSlide />,
-  },
-  {
-    id: 15,
+    id: 12,
     content: <AdvancedSlide />,
   },
   {
-    id: 16,
+    id: 13,
     content: <ContactSlide />,
   },
 ];
