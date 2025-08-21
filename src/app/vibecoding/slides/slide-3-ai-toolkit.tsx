@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Brain, User, FileText, ArrowRight } from "lucide-react";
+import { Brain, User, FileText, ArrowRight, ExternalLink } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export function AIToolkitSlide() {
@@ -38,6 +38,14 @@ export function AIToolkitSlide() {
       step1: "1. [Шаг 1] - [описание]",
       step2: "2. [Шаг 2] - [описание]",
       step3: "3. [Шаг 3] - [описание]",
+      resourcesTitle: "Полезные ресурсы",
+      repopromptTitle: "RepoPrompt",
+      repopromptDesc: "Инструмент для создания контекста из репозитория для LLM",
+      claudeTaskTitle: "Taskmaster",
+      claudeTaskDesc: "Система управления задачами для AI-разработки",
+      aiDevTasksTitle: "AI Dev Tasks",
+      aiDevTasksDesc: "Промпты для создания PRD и управления задачами",
+      visitLink: "Перейти",
     },
     en: {
       title: "🧠 Task Analysis and Planning",
@@ -71,22 +79,30 @@ export function AIToolkitSlide() {
       step1: "1. [Step 1] - [description]",
       step2: "2. [Step 2] - [description]",
       step3: "3. [Step 3] - [description]",
+      resourcesTitle: "Useful Resources",
+      repopromptTitle: "RepoPrompt",
+      repopromptDesc: "Tool for creating repository context for LLMs",
+      claudeTaskTitle: "Taskmaster",
+      claudeTaskDesc: "Task management system for AI-driven development",
+      aiDevTasksTitle: "AI Dev Tasks",
+      aiDevTasksDesc: "Prompts for PRD creation and task workflows",
+      visitLink: "Visit",
     },
   };
 
   const t = content[language];
 
   return (
-    <div className="space-y-6 md:space-y-12">
-      <h2 className="mb-4 md:mb-8 text-center text-2xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
+    <div className="space-y-4 md:space-y-8">
+      <h2 className="mb-3 md:mb-6 text-center text-xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
         {t.title}
       </h2>
 
       <div className="grid grid-cols-1 gap-4 md:gap-8 md:grid-cols-3">
         {/* Step 1: Gather Context */}
         <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 transition-shadow hover:shadow-lg dark:border-blue-700 dark:from-blue-900/20 dark:to-indigo-900/20">
-          <CardHeader className="pb-4">
-            <div className="flex items-center gap-4">
+          <CardHeader className="pb-2 md:pb-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <div className="rounded-full bg-blue-600 p-2 md:p-3">
                 <Brain className="h-5 w-5 md:h-7 md:w-7 text-white" />
               </div>
@@ -109,8 +125,8 @@ export function AIToolkitSlide() {
 
         {/* Step 2: Senior Architect Role */}
         <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-violet-50 transition-shadow hover:shadow-lg dark:border-purple-700 dark:from-purple-900/20 dark:to-violet-900/20">
-          <CardHeader className="pb-4">
-            <div className="flex items-center gap-4">
+          <CardHeader className="pb-2 md:pb-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <div className="rounded-full bg-purple-600 p-2 md:p-3">
                 <User className="h-5 w-5 md:h-7 md:w-7 text-white" />
               </div>
@@ -133,8 +149,8 @@ export function AIToolkitSlide() {
 
         {/* Step 3: Implementation Plan */}
         <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 transition-shadow hover:shadow-lg dark:border-green-700 dark:from-green-900/20 dark:to-emerald-900/20">
-          <CardHeader className="pb-4">
-            <div className="flex items-center gap-4">
+          <CardHeader className="pb-2 md:pb-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <div className="rounded-full bg-green-600 p-2 md:p-3">
                 <FileText className="h-5 w-5 md:h-7 md:w-7 text-white" />
               </div>
@@ -156,35 +172,12 @@ export function AIToolkitSlide() {
         </Card>
       </div>
 
-      {/* Simple Summary */}
-      <div className="mt-6 md:mt-12 rounded-lg border border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50 p-4 md:p-8 dark:border-gray-700 dark:from-gray-900/20 dark:to-blue-900/20">
-        <h4 className="mb-4 text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200">
-          {t.processTitle}
-        </h4>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-sm md:text-base text-gray-700 dark:text-gray-300">
-          <div className="flex items-center gap-2 md:gap-3">
-            <Brain className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
-            <span>{t.context}</span>
-          </div>
-          <ArrowRight className="h-5 w-5 md:h-6 md:w-6 text-gray-400 rotate-90 md:rotate-0" />
-          <div className="flex items-center gap-2 md:gap-3">
-            <User className="h-5 w-5 md:h-6 md:w-6 text-purple-600" />
-            <span>{t.architecture}</span>
-          </div>
-          <ArrowRight className="h-5 w-5 md:h-6 md:w-6 text-gray-400 rotate-90 md:rotate-0" />
-          <div className="flex items-center gap-2 md:gap-3">
-            <FileText className="h-5 w-5 md:h-6 md:w-6 text-green-600" />
-            <span>{t.plan}</span>
-          </div>
-        </div>
-      </div>
-
       {/* Result Block */}
-      <div className="mt-4 md:mt-8 rounded-lg border border-gray-200 bg-gradient-to-r from-gray-50 to-green-50 p-4 md:p-8 dark:border-gray-700 dark:from-gray-900/20 dark:to-green-900/20">
-        <h4 className="mb-4 text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200">
+      <div className="mt-4 md:mt-6 rounded-lg border border-gray-200 bg-gradient-to-r from-gray-50 to-green-50 p-3 md:p-4 dark:border-gray-700 dark:from-gray-900/20 dark:to-green-900/20">
+        <h4 className="mb-3 text-base md:text-lg font-semibold text-gray-800 dark:text-gray-200">
           {t.resultTitle}
         </h4>
-        <div className="rounded-lg border border-gray-300 bg-white p-3 md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        <div className="rounded-lg border border-gray-300 bg-white p-2 md:p-4 dark:bg-gray-800 dark:border-gray-600">
           <div className="mb-3 flex items-center gap-2">
             <FileText className="h-4 w-4 md:h-5 md:w-5 text-gray-600 dark:text-gray-400" />
             <span className="font-mono text-xs md:text-sm text-gray-600 dark:text-gray-400">
@@ -205,6 +198,83 @@ export function AIToolkitSlide() {
             <div className="ml-4 text-green-400">{t.step2}</div>
             <div className="ml-4 text-green-400">{t.step3}</div>
           </div>
+        </div>
+      </div>
+
+      {/* Resources Section */}
+      <div className="mt-4 md:mt-6">
+        <h4 className="mb-3 text-center text-base md:text-lg font-semibold text-gray-800 dark:text-gray-200">
+          {t.resourcesTitle}
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+          {/* RepoPrompt */}
+          <Card className="border-gray-200 bg-white hover:shadow-md transition-shadow dark:border-gray-700 dark:bg-gray-800">
+            <CardContent className="p-3 md:p-4">
+              <div className="space-y-2">
+                <h5 className="font-semibold text-base text-gray-900 dark:text-gray-100">
+                  {t.repopromptTitle}
+                </h5>
+                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
+                  {t.repopromptDesc}
+                </p>
+                <a
+                  href="https://repoprompt.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs md:text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                >
+                  {t.visitLink}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Claude Task Master */}
+          <Card className="border-gray-200 bg-white hover:shadow-md transition-shadow dark:border-gray-700 dark:bg-gray-800">
+            <CardContent className="p-3 md:p-4">
+              <div className="space-y-2">
+                <h5 className="font-semibold text-base text-gray-900 dark:text-gray-100">
+                  {t.claudeTaskTitle}
+                </h5>
+                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
+                  {t.claudeTaskDesc}
+                </p>
+                <a
+                  href="https://github.com/eyaltoledano/claude-task-master/blob/main/docs/tutorial.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs md:text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                >
+                  {t.visitLink}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* AI Dev Tasks */}
+          <Card className="border-gray-200 bg-white hover:shadow-md transition-shadow dark:border-gray-700 dark:bg-gray-800">
+            <CardContent className="p-3 md:p-4">
+              <div className="space-y-2">
+                <h5 className="font-semibold text-base text-gray-900 dark:text-gray-100">
+                  {t.aiDevTasksTitle}
+                </h5>
+                <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
+                  {t.aiDevTasksDesc}
+                </p>
+                <a
+                  href="https://github.com/snarktank/ai-dev-tasks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs md:text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                >
+                  {t.visitLink}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
