@@ -9,6 +9,8 @@ import {
   Palette,
   BookOpen,
   Bug,
+  CheckSquare,
+  FileText,
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
@@ -45,6 +47,14 @@ export function MCPSlide() {
       databaseDesc:
         "Доступ к схеме базы данных для лучшего понимания архитектуры.",
       databaseUrl: "glama.ai/mcp/servers →",
+      linearTitle: "Linear MCP",
+      linearDesc:
+        "Управление задачами и проектами прямо из IDE - создание issues, обновление статусов.",
+      linearUrl: "github.com/linear/linear-mcp →",
+      notionTitle: "Notion MCP",
+      notionDesc:
+        "Доступ к документации и базам знаний Notion для контекста проекта.",
+      notionUrl: "github.com/notion/notion-mcp →",
     },
     en: {
       title: "🔌 MCP - Extending Capabilities",
@@ -75,6 +85,14 @@ export function MCPSlide() {
       databaseDesc:
         "Access to database schema for better understanding of architecture.",
       databaseUrl: "glama.ai/mcp/servers →",
+      linearTitle: "Linear MCP",
+      linearDesc:
+        "Manage tasks and projects directly from IDE - create issues, update statuses.",
+      linearUrl: "github.com/linear/linear-mcp →",
+      notionTitle: "Notion MCP",
+      notionDesc:
+        "Access to Notion documentation and knowledge bases for project context.",
+      notionUrl: "github.com/notion/notion-mcp →",
     },
   };
 
@@ -253,6 +271,56 @@ export function MCPSlide() {
               className="text-xs text-cyan-600 hover:underline"
             >
               {t.databaseUrl}
+            </a>
+          </CardContent>
+        </Card>
+
+        {/* Linear MCP */}
+        <Card className="border-indigo-200 bg-gradient-to-br from-indigo-50 to-blue-50 transition-shadow hover:shadow-lg dark:border-indigo-700 dark:from-indigo-900/20 dark:to-blue-900/20">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-3">
+              <CheckSquare className="h-5 w-5 text-indigo-600" />
+              <h4 className="font-bold text-indigo-800 dark:text-indigo-300">
+                {t.linearTitle}
+              </h4>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="mb-3 mt-4 text-sm text-gray-700 dark:text-gray-300">
+              {t.linearDesc}
+            </p>
+            <a
+              href="https://github.com/linear/linear-mcp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-indigo-600 hover:underline"
+            >
+              {t.linearUrl}
+            </a>
+          </CardContent>
+        </Card>
+
+        {/* Notion MCP */}
+        <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 transition-shadow hover:shadow-lg dark:border-orange-700 dark:from-orange-900/20 dark:to-amber-900/20">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-3">
+              <FileText className="h-5 w-5 text-orange-600" />
+              <h4 className="font-bold text-orange-800 dark:text-orange-300">
+                {t.notionTitle}
+              </h4>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="mb-3 mt-4 text-sm text-gray-700 dark:text-gray-300">
+              {t.notionDesc}
+            </p>
+            <a
+              href="https://github.com/notion/notion-mcp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-orange-600 hover:underline"
+            >
+              {t.notionUrl}
             </a>
           </CardContent>
         </Card>
