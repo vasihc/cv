@@ -96,9 +96,9 @@ export function AIRevolutionSlide() {
       {/* Research Points */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {/* Stanford Research */}
-        <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-6">
+        <div className="rounded-lg border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 dark:border-blue-800 dark:from-blue-900/20 dark:to-indigo-900/20">
           <div className="mb-4 flex items-center gap-3">
-            <div className="rounded-full bg-blue-600 p-2">
+            <div className="rounded-full bg-blue-600 p-2 dark:bg-blue-500">
               <svg
                 className="h-5 w-5 text-white"
                 fill="none"
@@ -113,20 +113,22 @@ export function AIRevolutionSlide() {
                 />
               </svg>
             </div>
-            <h4 className="font-bold text-blue-800">{t.productivityTitle}</h4>
+            <h4 className="font-bold text-blue-800 dark:text-blue-200">
+              {t.productivityTitle}
+            </h4>
           </div>
-          <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">
+          <p className="mb-3 text-sm text-gray-700 dark:text-gray-200">
             {t.productivityDesc}
           </p>
-          <div className="text-xs font-medium text-blue-600 dark:text-blue-400">
+          <div className="text-xs font-medium text-blue-600 dark:text-blue-300">
             {t.productivityNote}
           </div>
         </div>
 
         {/* Google PM Interview */}
-        <div className="rounded-lg border border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 p-6">
+        <div className="rounded-lg border border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 p-6 dark:border-green-800 dark:from-green-900/20 dark:to-emerald-900/20">
           <div className="mb-4 flex items-center gap-3">
-            <div className="rounded-full bg-green-600 p-2">
+            <div className="rounded-full bg-green-600 p-2 dark:bg-green-500">
               <svg
                 className="h-5 w-5 text-white"
                 fill="none"
@@ -141,12 +143,14 @@ export function AIRevolutionSlide() {
                 />
               </svg>
             </div>
-            <h4 className="font-bold text-green-800">{t.googleTitle}</h4>
+            <h4 className="font-bold text-green-800 dark:text-green-200">
+              {t.googleTitle}
+            </h4>
           </div>
-          <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">
+          <p className="mb-3 text-sm text-gray-700 dark:text-gray-200">
             {t.googleDesc}
           </p>
-          <div className="text-xs font-medium text-green-600 dark:text-green-400">
+          <div className="text-xs font-medium text-green-600 dark:text-green-300">
             {t.googleNote}
           </div>
         </div>
