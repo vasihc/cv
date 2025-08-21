@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Globe, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
-import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import {
   HeroSlide,
   AIRevolutionSlide,
@@ -229,10 +229,9 @@ function VibeCodingContent() {
 
 export default function VibeCodingPage() {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <VibeCodingContent />
-      </LanguageProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <VibeCodingContent />
+    </LanguageProvider>
   );
 }
+

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 import "./globals.css";
 import React from "react";
@@ -22,9 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>{children}</body>
-      <Analytics />
+    <html lang="en" className={inter.className} suppressHydrationWarning>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
+      </body>
     </html>
   );
 }
