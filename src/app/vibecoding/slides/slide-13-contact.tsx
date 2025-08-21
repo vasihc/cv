@@ -130,7 +130,7 @@ export function ContactSlide() {
       </div>
       
       {/* AI Mindset Laboratory Card - moved to the bottom */}
-      <div className="mx-auto max-w-2xl mt-8">
+      <div className="mx-auto max-w-2xl mt-8 px-4 sm:px-0">
         <Card className="relative overflow-hidden border-2 border-purple-300 bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-50 shadow-xl transition-all hover:shadow-2xl hover:scale-[1.02] dark:border-purple-600 dark:from-purple-900/30 dark:via-violet-900/30 dark:to-indigo-900/30">
           {/* Decorative background pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -140,61 +140,61 @@ export function ContactSlide() {
             }}></div>
           </div>
           
-          <CardContent className="relative p-6">
-            <div className="flex items-start gap-4">
+          <CardContent className="relative p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
               {/* Logo */}
               <div className="flex-shrink-0">
                 <img 
                   src="https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/8adbbd35-ecdb-4052-8998-ef57000aa855/logo_round/w=256,quality=90,fit=scale-down"
                   alt="AI Mindset Lab"
-                  className="h-16 w-16 rounded-full shadow-lg ring-2 ring-purple-200 dark:ring-purple-700"
+                  className="h-14 w-14 sm:h-16 sm:w-16 rounded-full shadow-lg ring-2 ring-purple-200 dark:ring-purple-700"
                 />
               </div>
               
               {/* Content */}
-              <div className="flex-1">
+              <div className="flex-1 text-center sm:text-left">
                 <div className="mb-3">
-                  <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                  <h4 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                     {t.aiMindsetTitle}
                   </h4>
-                  <p className="text-sm font-medium text-purple-700 dark:text-purple-400">
+                  <p className="text-xs sm:text-sm font-medium text-purple-700 dark:text-purple-400 mt-1">
                     {t.aiMindsetSubtitle}
                   </p>
                 </div>
                 
-                <p className="mb-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                <p className="mb-4 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                   {t.aiMindsetDesc}
                 </p>
                 
                 {/* Promo code section with better styling */}
-                <div className="mb-4 rounded-xl bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/40 dark:to-indigo-900/40 p-4 shadow-inner">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-purple-700 dark:text-purple-300">
+                <div className="mb-4 rounded-xl bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/40 dark:to-indigo-900/40 p-3 sm:p-4 shadow-inner">
+                  <p className="mb-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-purple-700 dark:text-purple-300">
                     {t.promoLabel}
                   </p>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
                     <div className="flex-1 relative">
-                      <code className="block rounded-lg bg-white dark:bg-gray-900/50 px-4 py-3 text-center text-xl font-black tracking-wider text-purple-700 dark:text-purple-300 shadow-sm">
+                      <code className="block rounded-lg bg-white dark:bg-gray-900/50 px-3 py-2 sm:px-4 sm:py-3 text-center text-lg sm:text-xl font-black tracking-wider text-purple-700 dark:text-purple-300 shadow-sm">
                         {t.promoCode}
                       </code>
-                      <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-lg">
+                      <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-lg text-xs">
                         -10%
                       </Badge>
                     </div>
                     <Button
-                      size="default"
+                      size="sm"
                       variant="outline"
                       onClick={handleCopyPromo}
-                      className="border-2 border-purple-400 bg-white hover:bg-purple-50 dark:border-purple-600 dark:bg-gray-900/50 dark:hover:bg-purple-900/30 transition-all"
+                      className="border-2 border-purple-400 bg-white hover:bg-purple-50 dark:border-purple-600 dark:bg-gray-900/50 dark:hover:bg-purple-900/30 transition-all w-full sm:w-auto"
                     >
                       {copied ? (
                         <>
-                          <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
-                          <span className="text-green-600 dark:text-green-400">{t.copiedButton}</span>
+                          <CheckCircle className="mr-1.5 h-3.5 w-3.5 text-green-500" />
+                          <span className="text-green-600 dark:text-green-400 text-xs sm:text-sm">{t.copiedButton}</span>
                         </>
                       ) : (
                         <>
-                          <Copy className="mr-2 h-4 w-4" />
-                          {t.copyButton}
+                          <Copy className="mr-1.5 h-3.5 w-3.5" />
+                          <span className="text-xs sm:text-sm">{t.copyButton}</span>
                         </>
                       )}
                     </Button>
@@ -204,15 +204,15 @@ export function ContactSlide() {
                 <Button 
                   asChild 
                   className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-lg transition-all hover:shadow-xl"
-                  size="lg"
+                  size="default"
                 >
                   <a
                     href="https://aimindset.org/ai-mindset?utm_source=r-founders&utm_medium=referral&utm_campaign=r-founders"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ExternalLink className="mr-2 h-5 w-5" />
-                    {t.visitSite}
+                    <ExternalLink className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    <span className="text-sm sm:text-base">{t.visitSite}</span>
                   </a>
                 </Button>
               </div>
