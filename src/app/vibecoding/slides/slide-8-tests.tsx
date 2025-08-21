@@ -9,9 +9,60 @@ import {
   GitCommit,
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useState, useEffect } from "react";
 
 export function TestsSlide() {
   const { language } = useLanguage();
+  const [visibleTests, setVisibleTests] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [showSummary, setShowSummary] = useState(false);
+  
+  // Auto-run tests animation
+  useEffect(() => {
+    const startAnimation = () => {
+      setVisibleTests(0);
+      setProgress(0);
+      setShowSummary(false);
+      setIsRunning(true);
+      
+      // Animate test results appearing
+      const testInterval = setInterval(() => {
+        setVisibleTests(prev => {
+          if (prev >= 11) {
+            clearInterval(testInterval);
+            setTimeout(() => {
+              setShowSummary(true);
+              setIsRunning(false);
+            }, 500);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 200);
+      
+      // Animate progress bar
+      const progressInterval = setInterval(() => {
+        setProgress(prev => {
+          if (prev >= 100) {
+            clearInterval(progressInterval);
+            return 100;
+          }
+          return prev + 10;
+        });
+      }, 220);
+    };
+    
+    // Start animation immediately
+    startAnimation();
+    
+    // Restart animation every 8 seconds
+    const restartInterval = setInterval(startAnimation, 8000);
+    
+    return () => {
+      clearInterval(restartInterval);
+    };
+  }, []);
 
   const content = {
     ru: {
@@ -159,43 +210,124 @@ export function TestsSlide() {
           </Card>
         </div>
 
-        {/* Right side - test results simulation */}
+        {/* Right side - animated test results */}
         <div className="flex items-center justify-center">
-          <div className="h-[28rem] w-full rounded-lg border border-gray-200 bg-gray-900 p-4 font-mono text-xs">
+          <div className="h-[28rem] w-full rounded-lg border border-gray-200 bg-gray-900 p-4 font-mono text-xs overflow-hidden relative">
             {/* Terminal header */}
-            <div className="mb-3 flex items-center gap-2">
-              <div className="flex gap-1">
-                <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                <div className="h-3 w-3 rounded-full bg-green-500"></div>
+            <div className="mb-3 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="flex gap-1">
+                  <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                </div>
+                <span className="text-gray-400">{t.terminalTitle}</span>
               </div>
-              <span className="text-gray-400">{t.terminalTitle}</span>
+              {isRunning && (
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></div>
+                  <span className="text-green-400 text-[10px]">Running...</span>
+                </div>
+              )}
             </div>
 
-            {/* Test results */}
-            <div className="space-y-1 text-green-400">
-              <div>{t.test1}</div>
-              <div>{t.test2}</div>
-              <div>{t.test3}</div>
-              <div>{t.test4}</div>
-              <div>{t.test5}</div>
-              <div>{t.test6}</div>
-              <div>{t.test7}</div>
-              <div>{t.test8}</div>
-              <div className="text-gray-300">...</div>
-              <div>{t.test15}</div>
-              <div className="text-gray-300">...</div>
-              <div>{t.test23}</div>
-              <div className="text-gray-300">...</div>
-              <div>{t.test31}</div>
+            {/* Command */}
+            <div className="text-gray-400 mb-2">
+              <span className="text-green-400">$</span> npm test
             </div>
 
-            {/* Summary */}
-            <div className="mt-4 border-t border-gray-700 pt-3">
-              <div className="text-green-400">{t.allPassed}</div>
-              <div className="text-gray-400">{t.summary}</div>
-              <div className="text-gray-400">{t.time}</div>
+            {/* Progress bar */}
+            {isRunning && (
+              <div className="mb-3 h-1 w-full bg-gray-800 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-blue-500 to-green-500 transition-all duration-300"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+            )}
+
+            {/* Test results with animation */}
+            <div className="space-y-1">
+              {visibleTests >= 1 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test1}
+                </div>
+              )}
+              {visibleTests >= 2 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test2}
+                </div>
+              )}
+              {visibleTests >= 3 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test3}
+                </div>
+              )}
+              {visibleTests >= 4 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test4}
+                </div>
+              )}
+              {visibleTests >= 5 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test5}
+                </div>
+              )}
+              {visibleTests >= 6 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test6}
+                </div>
+              )}
+              {visibleTests >= 7 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test7}
+                </div>
+              )}
+              {visibleTests >= 8 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test8}
+                </div>
+              )}
+              {visibleTests >= 9 && <div className="text-gray-500">...</div>}
+              {visibleTests >= 10 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test15}
+                </div>
+              )}
+              {visibleTests >= 10 && <div className="text-gray-500">...</div>}
+              {visibleTests >= 11 && (
+                <div className="text-green-400 animate-fadeIn">
+                  <span className="inline-block animate-bounce" style={{ animationDuration: '0.5s', animationIterationCount: '1' }}>✓</span> {t.test31}
+                </div>
+              )}
             </div>
+
+            {/* Summary with animation */}
+            {showSummary && (
+              <div className="mt-4 border-t border-gray-700 pt-3 animate-fadeIn">
+                <div className="text-green-400 font-bold flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4" />
+                  {t.allPassed}
+                </div>
+                <div className="text-gray-400 mt-1">{t.summary}</div>
+                <div className="text-gray-400 flex items-center gap-2">
+                  <span>{t.time}</span>
+                  <span className="text-green-400 text-[10px]">• Fast!</span>
+                </div>
+              </div>
+            )}
+
+            {/* Animated dots while running */}
+            {isRunning && !showSummary && (
+              <div className="absolute bottom-4 left-4 text-gray-400">
+                <span className="animate-pulse">Running tests</span>
+                <span className="inline-block ml-1">
+                  <span className="animate-pulse" style={{ animationDelay: '0s' }}>.</span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.2s' }}>.</span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.4s' }}>.</span>
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
