@@ -1,8 +1,41 @@
 import { Code } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useState, useEffect } from "react";
 
 export function HeroSlide() {
   const { language } = useLanguage();
+  const [typedCommand, setTypedCommand] = useState("");
+  const [showResponse, setShowResponse] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+  
+  // Typing animation for whoami command
+  useEffect(() => {
+    const command = "whoami";
+    let index = 0;
+    
+    const typeInterval = setInterval(() => {
+      if (index <= command.length) {
+        setTypedCommand(command.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typeInterval);
+        // Show response after command is typed
+        setTimeout(() => {
+          setShowResponse(true);
+        }, 500);
+      }
+    }, 150);
+    
+    return () => clearInterval(typeInterval);
+  }, []);
+  
+  // Cursor blinking
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
 
   const content = {
     ru: {
@@ -22,23 +55,65 @@ export function HeroSlide() {
   const t = content[language];
 
   return (
+    <>
+      <style jsx>{`
+        @keyframes slideUp {
+          from {
+            transform: translateY(10px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        @keyframes slideInLeft {
+          from {
+            transform: translateX(-20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     <div className="space-y-4 md:space-y-8">
-      {/* Terminal-style header */}
+      {/* Terminal-style header with shadow */}
       <div className="mx-auto max-w-2xl">
-        <div className="rounded-lg bg-gray-900 p-2 font-mono text-xs md:p-4 md:text-sm text-green-400">
-          <div className="flex items-center gap-2">
-            <div className="flex gap-1">
-              <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-red-500"></div>
-              <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-yellow-500"></div>
-              <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-green-500"></div>
+        <div className="relative">
+          {/* Shadow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 blur-xl transform translate-y-2"></div>
+          
+          {/* Terminal */}
+          <div className="relative rounded-lg bg-gray-900 p-2 font-mono text-xs md:p-4 md:text-sm text-green-400 shadow-2xl border border-gray-800">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="flex gap-1">
+                <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-red-500 animate-pulse" style={{ animationDuration: '3s' }}></div>
+                <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-yellow-500 animate-pulse" style={{ animationDuration: '3s', animationDelay: '0.5s' }}></div>
+                <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-green-500 animate-pulse" style={{ animationDuration: '3s', animationDelay: '1s' }}></div>
+              </div>
+              <span className="text-gray-400 text-xs md:text-sm">~/rfounders-mobile</span>
             </div>
-            <span className="text-gray-400 text-xs md:text-sm">~/rfounders-mobile</span>
+            <div className="mt-2">
+              <span className="text-blue-400">$</span>{" "}
+              <span className="text-white">
+                {typedCommand}
+                {typedCommand.length < 6 && (
+                  <span className={`inline-block w-2 h-4 bg-white ml-0.5 ${showCursor ? 'opacity-100' : 'opacity-0'}`}>
+                    _
+                  </span>
+                )}
+              </span>
+            </div>
+            {showResponse && (
+              <div className="mt-1 text-green-400 animate-fadeIn">
+                <span className="inline-block" style={{ animation: 'slideUp 0.5s ease-out' }}>
+                  vasilii-glebov
+                </span>
+              </div>
+            )}
           </div>
-          <div className="mt-2">
-            <span className="text-blue-400">$</span>{" "}
-            <span className="text-white">whoami</span>
-          </div>
-          <div className="mt-1 text-green-400">vasilii-glebov</div>
         </div>
       </div>
 
@@ -92,5 +167,6 @@ export function HeroSlide() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -70,9 +70,8 @@ export function AdvancedSlide() {
       disadvantage1: "• Цена: $200/мес для реального использования",
       disadvantage2: "• $20 → 10 мин работы, $100 → 1 час",
       disadvantage3: "• Нет чекпоинтов, только Git",
-      disadvantage4: "• Медленно: задачи по 30+ минут, мешает флоу",
-      disadvantage5: "• Непредсказуемо дорого в API (неделя = $3000 токенов)",
-      disadvantage6: "• SSH доступ требует настройки безопасности",
+      disadvantage4: "• Непредсказуемо дорого в API (неделя = $3000 токенов)",
+      disadvantage5: "• SSH доступ требует настройки безопасности",
     },
     en: {
       title: "⚡ Claude Code at Maximum",
@@ -104,9 +103,8 @@ export function AdvancedSlide() {
       disadvantage1: "• Price: $200/month for real usage",
       disadvantage2: "• $20 → 10 min work, $100 → 1 hour",
       disadvantage3: "• No checkpoints, only Git",
-      disadvantage4: "• Slow: tasks take 30+ minutes, interferes with flow",
-      disadvantage5: "• Unpredictably expensive in API (week = $3000 tokens)",
-      disadvantage6: "• SSH access requires security setup",
+      disadvantage4: "• Unpredictably expensive in API (week = $3000 tokens)",
+      disadvantage5: "• SSH access requires security setup",
     },
   };
 
@@ -187,7 +185,6 @@ export function AdvancedSlide() {
                 <li>{t.disadvantage3}</li>
                 <li>{t.disadvantage4}</li>
                 <li>{t.disadvantage5}</li>
-                <li>{t.disadvantage6}</li>
               </ul>
             </CardContent>
           </Card>
