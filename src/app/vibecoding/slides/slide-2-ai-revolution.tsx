@@ -51,9 +51,6 @@ export function AIRevolutionSlide() {
         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
           {t.title}
         </h2>
-        <h3 className="text-xl text-gray-600 dark:text-gray-400">
-          {t.subtitle}
-        </h3>
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
